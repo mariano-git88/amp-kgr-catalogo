@@ -1,0 +1,1938 @@
+<!doctype html>
+<!--
+                _____ _______ _____ _______
+               |_   _|__   __|  __ \__   __|
+                 | |    | |  | |  | | | |
+                 | |    | |  | |  | | | |
+                _| |_   | |  | |__| | | |
+               |_____|  |_|  |_____/  |_|
+
+        I N S T I T U T O   T O R C U A T O   D I   T E L L A
+          Centro de Experimentacion Audiovisual · 1964-1970
+
+                        L  O  T  E    2  0
+       130 documentos · 365 capturas · coleccion Kostzer-Garcia Ramirez
+
+    ..................................................................
+
+        Procesamiento digital: Belén Leuzzi y Matías Butelman
+                              en 2026
+
+    ..................................................................
+
+       Los originales nunca se modifican. Cada imagen publicada
+       desciende de un master de captura por una sola cadena:
+       master -> ajustada -> acceso. Nada se recorta cuando el
+       diseño cruza el pliegue.
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instituto Torcuato Di Tella · Centro de Experimentación Audiovisual · 1964–1970</title>
+<meta name="description" content="Instituto Torcuato Di Tella, Centro de Experimentación Audiovisual, 1964–1970. Catálogo de acceso del Conjunto documental Kostzer–García Ramírez, Colección Mariano Pappalardo.">
+<style>
+/* ------------------------------------------------------------------ *
+ * Lote 20 · catálogo de acceso
+ * Fondo negro. Grotesca. Los escaneos se apoyan en una regla y no
+ * llevan marco: el papel es lo único que ilumina la página.
+ * Tinta de acento: sodio (#ffd400), sólo para estado actual y foco.
+ *
+ * La ficha baja por registros: arriba el documento visto —la imagen con
+ * su tira de vistas al lado, que es el índice del papel— y debajo los
+ * tres cuerpos que lo describen, Documento, Evento y Archivos, cada uno
+ * abierto por su rótulo sobre una regla. Cada cuerpo alinea sus pares
+ * dato/valor por `subgrid`, de modo que la columna de rótulos es una
+ * sola estructura y no una coincidencia de anchos.
+ * ------------------------------------------------------------------ */
+:root{
+  color-scheme: dark;
+  --negro:#000000;
+  --tinta:#f2efe8;
+  --tinta-2:#8e8a82;
+  --tinta-3:#57534b;
+  --linea:#232220;
+  --linea-2:#46433c;
+  --acento:#ffd400;
+
+  --grot:"Helvetica Neue",Helvetica,"Arial Nova",Arial,"Liberation Sans",sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+
+  --pad:clamp(18px,4vw,60px);
+  --barra:50px;
+
+  /* ---- escala tipográfica: cinco pasos, y ninguno fuera de esta lista ----
+     Regla de correspondencia entre rango semántico y rango visual. El mismo
+     rango se ve igual en el índice y en la ficha; lo que distingue un nivel
+     de otro es el tamaño, el color y el aire, no una negrita más.
+
+       t1  rótulo de campo y texto auxiliar   caps, tinta-2
+       t2  secundario: notas, pies, marca y signaturas
+       t3  valor de campo y prosa: el cuerpo de lectura
+       t4  título del documento
+       t5  título de sección: el año o el nombre del grupo
+
+     Dos pesos en todo el sitio: 400 para leer, 700 para titular. */
+  --t1:10.5px;
+  --t2:13px;
+  --t3:15px;
+  /* Principio B / D29: se restaura literalmente el cuerpo anterior del
+     título. El alto se resuelve con estructura y con la caja de imagen. */
+  --t4:clamp(25px,4.6vw,58px);
+  --t5:clamp(34px,7.4vw,100px);
+
+  /* rejilla de los pares dato/valor: una sola definición para toda la ficha */
+  --k:clamp(112px,10.5vw,150px);
+  --gap-k:clamp(18px,2vw,30px);
+}
+
+*,*::before,*::after{box-sizing:border-box;min-width:0}
+[hidden]{display:none !important}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--negro);
+  color:var(--tinta);
+  font-family:var(--grot);
+  font-size:var(--t3);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--acento);outline-offset:3px}
+
+/* micro-etiqueta: caps estrechas, la misma grotesca que todo lo demás */
+.et{
+  font-size:var(--t1);
+  line-height:1.25;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--tinta-2);
+}
+/* la monoespaciada queda sólo para signaturas y nombres de archivo */
+.sig{font-family:var(--mono);font-size:var(--t2);letter-spacing:.01em}
+
+/* ============================== PORTADA ============================ */
+/* Principios A y D / D29: la identidad es el SUJETO —ITDT / CEA / período—;
+   la descripción general se escribe en prosa y el espacio derecho muestra
+   piezas reales del acervo. */
+.port{
+  display:grid;
+  grid-template-columns:minmax(0,1.18fr) minmax(320px,.82fr);
+  gap:clamp(42px,5vw,84px);
+  align-items:stretch;
+  padding:clamp(24px,1.8vw,28px) var(--pad) clamp(20px,1.5vw,24px);
+}
+.port__intro{min-width:0;display:flex;flex-direction:column;justify-content:space-between}
+.port__t{
+  margin:0;
+  /* Principio B / D29: cuerpo original del titular, conservado. */
+  font-size:var(--t5);
+  line-height:.88;
+  font-weight:700;
+  letter-spacing:-.042em;
+  text-transform:uppercase;
+  max-width:13ch;
+}
+.port__centro{display:block;margin-top:.42em;font-size:.34em;line-height:1.05;letter-spacing:-.018em;max-width:28ch}
+.port__anios{display:block;margin-top:.1em;font-size:.62em;letter-spacing:-.03em;color:var(--acento);font-variant-numeric:tabular-nums}
+.port__lede{
+  margin:clamp(12px,1vw,16px) 0 0;
+  max-width:52ch;
+  font-size:var(--t3);
+  line-height:1.46;
+  letter-spacing:-.009em;
+  text-wrap:pretty;
+}
+.port__lede p{margin:0}
+/* mismo nivel que la descripción: es información primaria, no letra chica */
+.port__credito{margin-top:.65em !important}
+.nowrap{white-space:nowrap}
+/* Descargas primarias: dos acciones explícitas, con el mismo peso visual. */
+.port__descargas{
+  margin-top:clamp(14px,1.6vw,22px);
+  display:flex;flex-wrap:wrap;gap:10px;
+}
+.port__paquete{
+  padding:15px 20px 16px;
+  border:2px solid var(--acento);
+  background:var(--acento);
+  color:var(--negro);
+  flex:1 1 280px;
+  max-width:390px;
+  display:flex;flex-direction:column;gap:4px;
+  transition:background-color .14s ease,border-color .14s ease,transform .14s ease;
+}
+.port__paquete-t{font-size:clamp(17px,1.35vw,21px);font-weight:700;letter-spacing:-.018em}
+.port__paquete-d{color:var(--negro);opacity:.72;font-weight:700}
+.port__paquete:hover{background:#ffe45a;border-color:#ffe45a;transform:translateY(-1px)}
+.port__paquete--pendiente{
+  background:transparent;color:var(--acento);opacity:.62;cursor:default;
+}
+.port__paquete--pendiente .port__paquete-d{color:var(--acento)}
+.port__paquete--pendiente:hover{
+  background:transparent;border-color:var(--acento);transform:none;
+}
+
+/* Principio D / D29: la apertura muestra el acervo, no lo usa como adorno.
+   En escritorio ocupa casi toda la primera pantalla; los 28 px restantes
+   alojan la barra todavía oculta, que se revela al bajar. Texto y muestra
+   comparten UNA fila y, por eso, la misma altura; la imagen crece con esa fila.
+   La selección estratificada se toma de data.js y la pieza abre su ficha. */
+.muestra{min-width:0;align-self:stretch;display:flex;flex-direction:column;position:relative}
+.muestra__link{
+  display:flex;flex-direction:column;flex:1;min-height:0;
+  border-top:1px solid var(--linea-2);
+  transition:border-color .16s ease,color .16s ease;
+}
+.muestra__stand{
+  display:flex;align-items:center;justify-content:center;
+  position:relative;flex:1;min-height:0;overflow:hidden;
+  padding-bottom:clamp(38px,4vw,52px);
+}
+.muestra__stand img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
+  opacity:0;transform:translateY(0);
+  /* Principio D / D29: fundido cruzado de 160 ms sobre un intervalo de 3 s
+     (5,3 % del ciclo); la pieza queda quieta y legible el 94,7 % restante. */
+  transition:opacity .16s ease,transform .14s ease,filter .14s ease;
+}
+.muestra__stand img.ok{opacity:1}
+.muestra__meta{display:block;padding:12px 90px 0 0;border-top:1px solid var(--linea)}
+.muestra__t{margin:0;font-size:var(--t2);line-height:1.25;font-weight:400;overflow-wrap:anywhere;color:var(--tinta-2)}
+.muestra__link:hover{border-top-color:var(--acento)}
+.muestra__link:hover .muestra__t{color:var(--acento)}
+.muestra__link:hover .muestra__stand img{transform:translateY(-4px);filter:saturate(1.08)}
+.muestra__ctl{
+  position:absolute;right:0;bottom:8px;z-index:2;
+  display:flex;align-items:center;gap:1px;
+}
+.muestra__b{
+  width:28px;height:28px;display:grid;place-items:center;text-align:center;
+  color:var(--tinta-2);transition:background .12s ease,color .12s ease;
+}
+.muestra__b:hover{background:var(--acento);color:var(--negro)}
+
+/* ================================ BARRA ============================
+   Una sola barra pegada arriba reúne marca, años y búsqueda. En la apertura
+   no se anuncia: aparece con el primer scroll o al recibir foco de teclado.
+   En ficha permanece visible y conserva una sola altura de navegación. */
+.barra{
+  position:sticky;
+  top:0;
+  z-index:40;
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:2px clamp(14px,2.2vw,34px);
+  min-height:var(--barra);
+  padding:5px var(--pad);
+  background:var(--negro);
+  border-bottom:1px solid var(--linea-2);
+  opacity:0;
+  transform:translateY(28px);
+  pointer-events:none;
+  transition:opacity .18s ease,transform .18s ease;
+}
+.barra.barra--visible,.barra:focus-within{
+  opacity:1;transform:translateY(0);pointer-events:auto;
+}
+/* la marca: la identidad del catálogo, igual en las 130 fichas y en el
+   índice. No comparte renglón con nada que cambie de página a página. */
+.marca-sitio{
+  display:flex;flex-direction:column;gap:1px;flex:none;
+  line-height:1.22;
+  transition:color .12s ease;
+}
+.marca-sitio__n{
+  font-size:var(--t2);font-weight:700;letter-spacing:.01em;
+  white-space:nowrap;color:var(--tinta);
+}
+.marca-sitio__d{font-size:var(--t1);color:var(--tinta-2);white-space:nowrap}
+.marca-sitio:hover .marca-sitio__d{color:var(--tinta)}
+
+.barra__c{display:flex;align-items:center;gap:10px 18px;flex:1 1 300px;min-width:0}
+.barra__fin{display:flex;align-items:center;gap:clamp(10px,1.6vw,22px);flex:none;margin-left:auto}
+
+.indice__list{
+  display:flex;
+  gap:1px;
+  flex:1 1 auto;
+  overflow-x:auto;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+}
+.indice__list::-webkit-scrollbar{display:none}
+.indice__b{
+  flex:none;
+  display:flex;
+  gap:7px;
+  align-items:baseline;
+  padding:6px 10px;
+  white-space:nowrap;
+  transition:color .12s ease,background .12s ease;
+}
+.indice__b:hover{color:var(--tinta)}
+.indice__n{color:var(--tinta-3)}
+.indice__b[aria-current="true"]{background:var(--acento);color:var(--negro)}
+.indice__b[aria-current="true"] .indice__n{color:var(--negro);opacity:.6}
+.buscar{flex:none;display:flex;gap:8px;align-items:center;border-bottom:1px solid var(--linea-2)}
+.buscar:focus-within{border-bottom-color:var(--acento)}
+.buscar input{
+  font-family:var(--mono);
+  font-size:var(--t2);
+  width:clamp(88px,14vw,170px);
+  padding:5px 0;
+  border:0;
+  background:none;
+  color:var(--tinta);
+}
+.buscar input::placeholder{color:var(--tinta-3)}
+.buscar input:focus{outline:none}
+.buscar:hover{border-bottom-color:var(--acento)}
+
+/* ============================== MOSAICO ============================ */
+.mosaico{padding:0 var(--pad) clamp(56px,9vw,128px)}
+.grupo{padding-top:clamp(44px,6vw,88px);scroll-margin-top:var(--barra)}
+.grupo__head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:20px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--linea-2);
+}
+.grupo__t{
+  margin:0;
+  font-weight:700;
+  font-size:var(--t5);
+  line-height:.86;
+  letter-spacing:-.05em;
+  text-transform:uppercase;
+  font-variant-numeric:tabular-nums;
+}
+.grupo__t--pal{font-size:var(--t5);letter-spacing:-.03em;max-width:15ch}
+.grupo__n{flex:none;text-align:right}
+
+/* Las piezas se escalan por ALTO y la celda sigue a la proporción de cada una.
+   Con `max-height`+`max-width` mandaba el lado más largo —un folleto angosto
+   llegaba a los 224 px de alto y uno casi cuadrado se quedaba en 150— y el filo
+   de arriba de cada fila quedaba en serrucho. Fijar el alto sobre una rejilla
+   de celdas iguales no alcanza: a 224 px de alto estas piezas miden entre 94 y
+   515 px de ancho, así que en una celda fija la apaisada se encajona y `contain`
+   la vuelve a achicar. La caja mide 224 pero la obra no. Por eso la fila fluye
+   y cada pieza ocupa el ancho que su proporción pide. */
+.piezas{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:flex-start;
+  column-gap:clamp(16px,2.2vw,32px);
+  row-gap:clamp(30px,3.6vw,50px);
+  padding-top:clamp(28px,3.4vw,44px);
+}
+/* --- EL ESTANTE — concepto normalizado (2026-08-27) --------------------
+   Tres componentes muestran piezas en miniatura: el mosaico, la tira de
+   vistas y las filas de descarga. Los tres usan LA MISMA física: una caja de
+   alto fijo, la pieza apoyada en el borde inferior como sobre un estante, y
+   escalada por ALTO para que todas compartan línea de base; si el ancho no
+   alcanza, `contain` la achica sin deformarla. La receta vive acá una sola
+   vez; cada contexto fija su alto. --- */
+.pieza__stand,.tira__stand,.arch__preview{
+  display:flex;align-items:flex-end;justify-content:flex-start;
+}
+.pieza__stand img,.tira__stand img,.arch__preview img{
+  height:100%;width:auto;max-width:100%;object-fit:contain;object-position:left bottom;
+  transition:transform .16s ease,filter .16s ease;
+}
+
+/* la pieza se apoya en una regla: sin caja, sin sombra, sin fondo */
+/* el mínimo no es estético: es el ancho que el rótulo necesita para no
+   partirse en una pieza muy angosta (la más angosta mide 94 px a 224 de alto) */
+.pieza{display:flex;flex-direction:column;flex:0 0 auto;
+  min-width:150px;max-width:100%;transition:color .16s ease}
+.pieza__stand{height:clamp(138px,16vw,224px)}
+.pieza__stand img{
+  opacity:0;transform:translateY(0);
+  transition:opacity .32s ease,transform .16s ease,filter .16s ease;
+}
+.pieza__stand img.ok{opacity:1}
+.pieza__base{padding-top:9px;border-top:1px solid transparent;transition:border-color .16s ease}
+.pieza__sig{display:block;color:var(--tinta-3);transition:color .12s ease}
+.pieza__t{
+  display:block;
+  margin-top:4px;
+  font-size:var(--t2);
+  line-height:1.34;
+  letter-spacing:-.006em;
+  overflow-wrap:anywhere;
+}
+/* Principio C / D29: el acento expresa respuesta, no sólo posición. */
+.pieza:hover .pieza__stand img,.pieza:focus-visible .pieza__stand img{transform:translateY(-4px);filter:saturate(1.08)}
+.pieza:hover .pieza__base,.pieza:focus-visible .pieza__base{border-top-color:var(--acento)}
+.pieza:hover .pieza__sig,.pieza:focus-visible .pieza__sig,
+.pieza:hover .pieza__t,.pieza:focus-visible .pieza__t{color:var(--acento)}
+
+/* marca de pieza sin imagen: sólo signatura y estado */
+.marca{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  gap:6px;
+  width:100%;
+  height:100%;
+  padding:0 0 10px;
+}
+.marca__sig{font-family:var(--mono);font-size:var(--t2);color:var(--tinta-3)}
+.vacio{margin:0;padding:clamp(46px,8vw,100px) 0}
+
+/* =============================== FICHA ============================= */
+.ficha{padding:0 var(--pad) clamp(64px,9vw,140px)}
+
+/* Principio B / D29: breadcrumb arriba y título abajo, en dos bandas
+   verticales. El título no compite horizontalmente con la ruta. */
+.fnav{
+  display:flex;align-items:baseline;justify-content:space-between;
+  flex-wrap:wrap;gap:2px 18px;
+  padding:7px 0 6px;
+  border-bottom:1px solid var(--linea);
+}
+.ruta{display:flex;align-items:baseline;gap:3px 12px;flex-wrap:wrap;min-width:0}
+.ruta__v{display:flex;align-items:baseline;gap:7px;flex:none}
+.ruta__v{position:relative}
+.ruta__fl{
+  position:absolute;right:calc(100% + 8px);
+  line-height:1;color:var(--tinta-2);transition:color .12s ease;
+}
+.ruta__anio{
+  font-size:var(--t3);
+  line-height:1.25;
+  color:var(--tinta);
+  font-variant-numeric:tabular-nums;
+  border-bottom:1px solid var(--linea-2);
+  transition:border-color .12s ease;
+}
+.ruta__v:hover .ruta__fl,.ruta__v:hover .ruta__anio{color:var(--tinta)}
+.ruta__v:hover .ruta__anio{border-bottom-color:currentColor}
+.fnav__g{display:flex;gap:2px;align-items:baseline;flex:none}
+.fnav__b{padding:5px 8px;transition:color .12s ease,background .12s ease}
+.fnav__b:not([aria-disabled]):hover{background:var(--tinta);color:var(--negro)}
+.fnav__b[aria-disabled]{color:var(--tinta-3);cursor:default}
+.ficha__titulo{
+  margin:clamp(11px,1.3vw,18px) 0 0;
+  font-size:var(--t4);line-height:1;font-weight:700;
+  letter-spacing:-.038em;text-transform:uppercase;overflow-wrap:anywhere;
+}
+
+/* --- rótulo de cuerpo: caps sobre una regla. Es la única pieza de
+   estructura de la ficha, y la comparten las cuatro zonas. La cifra a la
+   derecha aparece sólo donde la cantidad importa (vistas, archivos). --- */
+.banda__h{
+  display:flex;
+  align-items:baseline;
+  gap:8px 16px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--linea-2);
+}
+.banda__t{margin:0;font-weight:400}
+.banda__n{margin-left:auto;text-align:right;white-space:nowrap}
+
+.zona{margin-top:clamp(34px,4.4vw,64px)}
+
+/* --- zona vista: el papel a la izquierda, el juego de vistas al lado. La
+   tira va al costado y no debajo: es el índice del documento, y estando
+   pegada a la imagen se navega sin bajar la página. --- */
+.ver{
+  display:grid;
+  grid-template-columns:minmax(0,1.62fr) minmax(196px,1fr);
+  gap:clamp(24px,3vw,50px);
+  align-items:start;
+  padding-top:clamp(10px,1.1vw,16px);
+}
+.visor{margin:0;min-width:0;display:flex;flex-direction:column}
+/* La caja de imagen tiene un alto estable DENTRO de la ficha: pasar de una
+   vista a otra no mueve el pie ni empuja lo que sigue. Ese alto no es un
+   valor arbitrario —eso dejaba media pantalla en negro sobre las piezas
+   apaisadas— sino el que necesita la vista más alta del documento, acotado
+   por lo que queda de pantalla; lo calcula ajustarCaja(). La imagen se
+   ajusta por `contain`, nunca se deforma ni se recorta, y arranca arriba a
+   la izquierda: el documento empieza siempre pegado a la barra. */
+.visor__caja{
+  height:var(--caja,max(1px,calc(100svh - var(--barra) - 16rem)));
+  display:flex;align-items:flex-start;justify-content:flex-start;
+}
+.visor__img{
+  width:100%;height:100%;
+  object-fit:contain;object-position:left top;
+  cursor:zoom-in;opacity:0;transition:opacity .28s ease;
+}
+.visor__img.ok{opacity:1}
+/* el papel no lleva regla: el pie se separa por aire, como en el mosaico.
+   Va pegado al borde izquierdo de la imagen, no repartido a lo ancho de la
+   página: es el pie de esa imagen, no de la banda. */
+.visor__pie{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 18px;
+  margin-top:11px;
+}
+.visor__f{text-transform:none;letter-spacing:.03em;overflow-wrap:anywhere;color:var(--tinta)}
+/* Sólo los eventuales recortes derivados requieren aclaración. Una captura
+   directa es hoy la condición común de todas las vistas y no se rotula. */
+.visor__o{color:var(--tinta-3)}
+.visor__o--der{color:var(--tinta-2)}
+
+/* --- tira de vistas: rejilla de ancho fijo, para que los rótulos de una
+   misma fila arranquen a la misma altura aunque tengan distinto largo. Las
+   celdas sobrantes quedan vacías: la tira se apoya a la izquierda, como las
+   piezas del mosaico.
+   Las miniaturas se escalan por ALTO, no por ancho: un desplegado apaisado y
+   un panel vertical medían antes 40 px y 96 px de alto en la misma fila, y la
+   tira se leía como un serrucho. Escalando por alto todas se apoyan sobre la
+   misma línea; la que resulta demasiado ancha toma dos celdas en vez de
+   achicarse, así conserva su altura y sigue pareja con el resto. --- */
+.tira{min-width:0}
+.tira__items{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:flex-start;
+  gap:20px 15px;
+  padding-top:18px;
+  align-content:start;
+  /* la tira no empuja la primera pantalla: se queda dentro del alto de la
+     caja de imagen y, si tiene más vistas de las que entran, se recorre */
+  max-height:var(--libre,none);
+  overflow-y:auto;
+  scrollbar-width:thin;
+  scrollbar-color:var(--linea-2) transparent;
+}
+.tira__i{display:flex;flex-direction:column;gap:8px;text-align:left;
+  flex:0 0 auto;min-width:98px;max-width:100%}
+.tira__stand{height:96px}
+
+.tira__lab{
+  font-size:var(--t1);line-height:1.3;letter-spacing:-.002em;
+  color:var(--tinta-3);overflow-wrap:anywhere;
+  transition:color .12s ease;
+}
+.tira__lab--neutro{color:var(--linea-2)}
+.tira__o{margin-top:-3px;letter-spacing:.16em;color:var(--tinta-3)}
+.tira__i:hover .tira__lab{color:var(--acento)}
+.tira__i:hover .tira__stand img{transform:translateY(-3px);filter:saturate(1.08)}
+.tira__i[aria-current="true"] .tira__lab{color:var(--acento)}
+.tira__i--off{cursor:default}
+.tira__i--off .tira__stand{width:100%;border:1px dashed var(--linea)}
+.tira__i--off .tira__lab{color:var(--linea-2)}
+
+/* --- zona leer: Documento y Evento, dos cuerpos del mismo rango ------- */
+.leer{
+  display:grid;
+  grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);
+  gap:clamp(42px,5vw,76px);
+  align-items:start;
+}
+.cuerpo{min-width:0}
+.cuerpo .banda__h{padding-bottom:11px;border-bottom-color:var(--tinta-3)}
+
+/* Los pares dato/valor: la columna de rótulos la define el <dl> una sola
+   vez y cada fila la hereda con `subgrid`, de modo que todos los valores
+   arrancan en la misma vertical. Rótulo (10,5 px) y valor (15 px) se
+   alinean por línea de base, no por caja. */
+.datos{
+  display:grid;
+  grid-template-columns:var(--k) minmax(0,1fr);
+  column-gap:var(--gap-k);
+  margin:10px 0 0;
+}
+.dato{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:var(--k) minmax(0,1fr);
+  column-gap:var(--gap-k);
+  align-items:start;
+  padding:12px 0 13px;
+  border-bottom:1px solid var(--linea);
+}
+@supports (grid-template-columns:subgrid){
+  .dato{grid-template-columns:subgrid}
+}
+.dato__k{margin:0;padding-top:.27em;line-height:1.35}
+.dato__v{margin:0;overflow-wrap:anywhere;line-height:1.52}
+.dato__v--mono{font-family:var(--mono);font-size:var(--t2)}
+.dato__v--nota{font-size:var(--t2);color:var(--tinta-2)}
+.dato__v a{border-bottom:1px solid var(--linea-2);transition:border-color .12s ease}
+.dato__v a:hover{border-bottom-color:var(--acento);color:var(--acento)}
+.rel{display:flex;flex-direction:column;gap:5px}
+
+/* --- referencias externas: una fila bibliográfica mínima en Evento. --- */
+.fuentes__breves{display:flex;flex-wrap:wrap;gap:4px 0;font-size:var(--t2);line-height:1.5}
+.fuentes__breve:not(:last-child)::after{content:"; ";white-space:pre;color:var(--tinta-3)}
+.fuentes__breve a{border-bottom:1px solid var(--linea-2)}
+.fuentes__breve a:hover{color:var(--acento);border-bottom-color:var(--acento)}
+.fuentes__inst{color:var(--tinta-3)}
+
+/* --- zona archivos ---------------------------------------------------
+   La ficha pública ofrece sólo derivados de acceso: un JPEG por vista y el
+   PDF del documento. Los demás niveles se distribuyen en la copia completa. */
+.arch{
+  display:grid;grid-template-columns:minmax(0,1fr);
+  row-gap:clamp(38px,4.4vw,62px);
+  padding-top:clamp(20px,2.4vw,30px);
+}
+.arch__vistas,.arch__pdfs{min-width:0}
+.arch__head{min-width:0;display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 18px}
+.arch__k{
+  margin:0;font-size:var(--t2);font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--tinta);
+}
+.arch__d{margin:0;font-size:var(--t1);line-height:1.35;color:var(--tinta-3)}
+.arch__n{margin:0 0 0 auto}
+.arch__l{list-style:none;margin:14px 0 0;padding:0;border-top:1px solid var(--linea)}
+.arch__fila{
+  min-width:0;display:grid;
+  grid-template-columns:minmax(66px,82px) minmax(0,1fr);
+  gap:clamp(15px,1.8vw,26px);align-items:center;
+  padding:8px 0;border-bottom:1px solid var(--linea);
+}
+.arch__preview{width:100%;height:56px;overflow:hidden;color:var(--tinta-2)}
+.arch__cuerpo{min-width:0;display:grid;gap:5px}
+.arch__vista{display:flex;align-items:baseline;gap:7px 13px;flex-wrap:wrap}
+.arch__vista-n{color:var(--tinta-2)}
+.arch__vista-m{font-size:var(--t2);line-height:1.35;color:var(--tinta)}
+.arch__opciones{min-width:0;display:grid;grid-template-columns:minmax(0,1fr)}
+.arch__a{
+  min-width:0;display:grid;grid-template-columns:minmax(0,1fr) 14px;gap:12px;
+  align-items:start;padding:0 0 4px;border-bottom:1px solid var(--linea-2);
+  color:var(--tinta-2);transition:color .12s ease,border-color .12s ease;
+}
+.arch__a::after{content:"↓";color:var(--tinta-3);transition:color .12s ease;text-align:right}
+.arch__a:hover{color:var(--acento);border-bottom-color:var(--acento)}
+.arch__a:hover::after{color:var(--acento)}
+.arch__nivel{display:inline;margin:0 9px 0 0;color:#aaa59a}
+.arch__txt{min-width:0}
+.arch__nombre{display:inline;font-family:var(--mono);font-size:11.5px;line-height:1.35;color:#c2bdb3;overflow-wrap:anywhere}
+.arch__m{
+  display:block;margin:2px 0 0;
+  font-size:11px;letter-spacing:.025em;color:var(--tinta-2);
+  font-variant-numeric:tabular-nums;
+}
+.arch__falta{margin:0;padding:0 0 9px;color:var(--tinta-3);border-bottom:1px solid var(--linea)}
+.arch__pdf-l{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:16px}
+.arch__pdf-f{min-width:0}
+.arch__pdf-a{
+  display:grid;grid-template-columns:60px minmax(0,1fr) 14px;gap:18px;
+  align-items:start;max-width:720px;padding:0 0 12px;border-bottom:1px solid var(--linea);
+  color:var(--tinta-2);transition:color .12s ease,border-color .12s ease;
+}
+.arch__pdf-a::after{content:"↓";color:var(--tinta-3);text-align:right;transition:color .12s ease}
+.arch__pdf-a:hover{color:var(--acento);border-bottom-color:var(--acento)}
+.arch__pdf-a:hover::after{color:var(--acento)}
+.arch__pdf{width:60px;height:75px;display:block}
+.arch__pend{margin:14px 0 0;color:var(--tinta-3)}
+.arch__vacio{
+  margin:clamp(18px,2.2vw,26px) 0 0;max-width:64ch;
+  font-size:var(--t2);line-height:1.5;color:var(--tinta-2);
+}
+/* --- pieza sin captura: la ficha dice por qué, no sólo que falta ------ */
+.aviso{max-width:56ch;padding-top:clamp(6px,1.4vw,18px)}
+.aviso__sig{font-family:var(--mono);font-size:var(--t3);color:var(--tinta-2)}
+/* el estado es un rótulo, no un segundo título: no compite con el nombre
+   del documento, que ya está arriba */
+.aviso__et{
+  display:block;margin-top:9px;
+  font-size:var(--t2);line-height:1.3;
+  font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--tinta);
+}
+.aviso__p{margin:15px 0 0;font-size:var(--t3);line-height:1.5;color:var(--tinta-2);text-wrap:pretty}
+.aviso__ver{display:flex;flex-direction:column;gap:8px;margin-top:19px}
+.aviso__ver a{display:grid;grid-template-columns:auto minmax(0,1fr);gap:11px;align-items:baseline}
+.aviso__ver a span:first-child{font-family:var(--mono);font-size:var(--t2);color:var(--tinta-3);transition:color .12s ease}
+.aviso__ver a:hover span:first-child{color:var(--acento)}
+
+/* ================================ VISOR ============================
+   La ficha muestra el documento a tamaño de lectura, en una caja estable;
+   el detalle se mira acá, a pantalla completa. El visor abre siempre
+   ajustado —la pieza entera, sin recorte— y desde ahí se acerca con la
+   rueda, con los botones o con doble clic, se arrastra para recorrer y se
+   pasa de vista con las flechas. Nunca deforma: sólo escala. */
+.zoom{
+  position:fixed;inset:0;z-index:90;
+  display:flex;flex-direction:column;
+  background:var(--negro);
+}
+.zoom__bar{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:10px 20px;flex-wrap:wrap;
+  padding:11px var(--pad);
+  background:var(--negro);
+  border-bottom:1px solid var(--linea);
+  position:relative;z-index:2;
+}
+.zoom__meta{display:flex;align-items:baseline;gap:6px 14px;flex-wrap:wrap;min-width:0}
+.zoom__sig{color:var(--tinta-2)}
+.zoom__v{color:var(--tinta);text-transform:none;letter-spacing:.03em}
+.zoom__ctl{display:flex;align-items:center;gap:2px;flex:none}
+.zoom__b{
+  padding:5px 9px;min-width:30px;text-align:center;
+  transition:color .12s ease,background .12s ease;
+}
+.zoom__b:not([aria-disabled]):hover{background:var(--tinta);color:var(--negro)}
+.zoom__b[aria-disabled]{color:var(--tinta-3);cursor:default}
+.zoom__k{
+  min-width:52px;text-align:center;color:var(--tinta-2);
+  font-variant-numeric:tabular-nums;
+}
+.zoom__stage{
+  flex:1;display:flex;align-items:center;justify-content:center;
+  padding:clamp(10px,1.6vw,24px) var(--pad) var(--pad);
+  min-height:0;overflow:hidden;touch-action:none;
+  cursor:zoom-out;
+}
+.zoom__stage img{cursor:zoom-in}
+.zoom__stage.cerca img{cursor:grab}
+.zoom__stage.arrastra img{cursor:grabbing}
+.zoom__stage img{
+  max-width:100%;max-height:100%;width:auto;height:auto;
+  transform-origin:center center;
+  will-change:transform;
+  -webkit-user-select:none;user-select:none;-webkit-user-drag:none;
+}
+.zoom__stage.suave img{transition:transform .18s ease}
+
+/* ================================= PIE ============================= */
+/* El pie lleva dos líneas: la identidad de lo que se muestra y, debajo y en
+   voz más baja, el colofón —quién lo produjo y cuándo—. El colofón se lee
+   después, no compite. */
+.pie{padding:clamp(26px,3.4vw,46px) var(--pad);border-top:1px solid var(--linea-2);
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 26px}
+.pie__col{color:var(--tinta-3)}
+
+/* ============================= RESPONSIVE ========================== */
+@media (max-width:1040px){
+  .leer{grid-template-columns:minmax(0,1fr);gap:clamp(28px,3.4vw,44px)}
+}
+@media (min-width:901px){
+  /* Los 28 px finales completan el viewport con la barra aún oculta; al primer
+     desplazamiento ésta entra sin alterar la altura de la apertura. */
+  .port{
+    height:calc(100vh - 28px);height:calc(100svh - 28px);
+    grid-template-rows:minmax(0,1fr)
+  }
+  .port__intro,.muestra{height:100%;min-height:0}
+}
+@media (max-width:900px){
+  .port{grid-template-columns:minmax(0,1fr)}
+  .muestra__stand{flex:none;height:min(58svh,520px)}
+  .arch__n{margin-left:0;width:100%}
+}
+@media (max-width:1100px){
+  /* la barra se queda con lo esencial: la marca corta y la navegación */
+  .marca-sitio__d{display:none}
+}
+@media (max-width:900px){
+  /* la tira pasa debajo de la imagen: ahí ya no compite con la primera
+     pantalla y se despliega entera, sin recorrido propio */
+  .ver{grid-template-columns:minmax(0,1fr);gap:clamp(20px,2.6vw,32px)}
+  .tira__items{max-height:none;overflow:visible}
+}
+@media (max-width:560px){
+  body{font-size:14.5px}
+  :root{--k:minmax(0,1fr)}
+  .piezas{grid-template-columns:repeat(auto-fill,minmax(126px,1fr));column-gap:14px}
+  .tira__items{grid-template-columns:repeat(auto-fill,minmax(84px,100px));gap:16px 12px}
+  .tira__stand,.arch__preview{height:58px}
+  .arch__fila{grid-template-columns:minmax(68px,82px) minmax(0,1fr);gap:12px;padding:9px 0}
+  .arch__opciones{gap:12px}
+  .arch__a{grid-template-columns:minmax(0,1fr) 12px;gap:6px}
+  .arch__nombre{font-size:10.5px}
+  .arch__m{letter-spacing:.02em}
+  .arch__pdf{width:44px;height:55px}
+  .arch__pdf-a{grid-template-columns:44px minmax(0,1fr) 12px;gap:14px}
+  .visor__o{text-align:left}
+  .datos{grid-template-columns:minmax(0,1fr)}
+  .dato{grid-template-columns:minmax(0,1fr);row-gap:3px}
+  .grupo__head{flex-wrap:wrap;gap:2px 16px}
+  .grupo__t--pal,.port__t{max-width:100%}
+  .fnav__b{padding:5px 6px}
+  .zoom__bar{padding:9px var(--pad)}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.001ms !important}
+  .barra{transition:none}
+  .pieza__stand img,.visor__img{opacity:1}
+  .zoom__stage.suave img{transition:none}
+}
+@media print{
+  .indice,.fnav,.zoom{display:none}
+  .pieza__stand img,.visor__img{opacity:1}
+  .visor__caja{height:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="port">
+  <!-- Principios A, B y D / D29: identidad del sujeto, descripción en prosa
+       y muestra rotativa. La apertura se lee con un único registro verbal. -->
+  <div class="port__intro">
+    <h1 class="port__t">Instituto Torcuato Di&nbsp;Tella<span class="port__centro">Centro de Experimentación Audiovisual</span><span class="port__anios">1964&#8202;–&#8202;1970</span></h1>
+    <div class="port__lede">
+      <p>Este catálogo describe 130 fichas de documentos vinculados con las actividades
+         del Instituto Torcuato Di&nbsp;Tella entre 1964 y 1970.</p>
+      <!-- La línea de procedencia: presente en la primera vista, en un
+           segundo párrafo y una voz más baja. El título le pertenece al
+           contenido (ITDT · CEA); la custodia se dice sin disputárselo. -->
+      <p class="port__credito">Conjunto documental Kostzer–García Ramírez
+         · <span class="nowrap">Colección Mariano&nbsp;Pappalardo</span></p>
+    </div>
+    <!-- Las dos copias se ofrecen donde se entra y enlazan directamente a ZIP
+         estables; sus nombres públicos no dependen de la fecha de armado. -->
+    <div class="port__descargas" id="portDescargas">
+      <a class="port__paquete" href="leeme.html">
+        <span class="port__paquete-t">Ver información de la entrega</span>
+        <span class="et port__paquete-d">Contenido y manifiesto de verificación</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Principio D / D29: el catálogo recibe mostrando el acervo. El contenido
+       se completa desde data.js y cada muestra abre la ficha correspondiente. -->
+  <aside class="muestra" id="muestra" aria-label="Selección rotativa del conjunto">
+    <a class="muestra__link" id="muestraLink" href="#">
+      <span class="muestra__stand"><img id="muestraImg" alt=""><img id="muestraImgAlt" alt=""></span>
+      <span class="muestra__meta">
+        <strong class="muestra__t" id="muestraTitulo"></strong>
+      </span>
+    </a>
+    <span class="muestra__ctl">
+      <button type="button" class="et muestra__b" id="muestraPrev" aria-label="Mostrar pieza anterior">←</button>
+      <button type="button" class="et muestra__b" id="muestraPausa" aria-label="Pausar rotación" title="Pausar rotación">Ⅱ</button>
+      <button type="button" class="et muestra__b" id="muestraNext" aria-label="Mostrar pieza siguiente">→</button>
+    </span>
+  </aside>
+</header>
+
+<nav class="barra" id="barra" aria-label="Barra del catálogo">
+  <a class="marca-sitio" href="#" id="marca" title="Volver al catálogo completo">
+    <span class="marca-sitio__n">Instituto Torcuato Di&nbsp;Tella</span>
+    <span class="marca-sitio__d">Centro de Experimentación Audiovisual · 1964–1970</span>
+  </a>
+  <div class="barra__c" id="barraCentro">
+    <div class="indice__list" id="indice"></div>
+  </div>
+  <div class="barra__fin">
+    <label class="buscar">
+      <span class="et">Buscar</span>
+      <input id="q" type="search" placeholder="título, año, sala, elenco…" autocomplete="off"
+             aria-label="Buscar por título, identificador, año, tipo de documento, lugar o elenco">
+    </label>
+  </div>
+</nav>
+
+<main id="mosaico" class="mosaico"></main>
+<article id="ficha" class="ficha" hidden></article>
+
+<footer class="pie">
+  <span class="et">Instituto Torcuato Di Tella · Centro de Experimentación Audiovisual · 1964–1970</span>
+  <span class="et pie__col">Procesamiento digital: Belén Leuzzi y Matías Butelman · 2026</span>
+</footer>
+
+<div id="zoom" class="zoom" hidden tabindex="-1" role="dialog" aria-modal="true" aria-label="Visor de la imagen">
+  <div class="zoom__bar">
+    <span class="et zoom__meta">
+      <span class="sig zoom__sig" id="zoomSig"></span>
+      <span class="zoom__v" id="zoomVista"></span>
+      <span id="zoomCuenta"></span>
+    </span>
+    <span class="zoom__ctl">
+      <button type="button" class="et zoom__b" id="zoomPrev" title="Vista anterior">←</button>
+      <button type="button" class="et zoom__b" id="zoomNext" title="Vista siguiente">→</button>
+      <span class="et zoom__k" id="zoomK">100 %</span>
+      <button type="button" class="et zoom__b" id="zoomMenos" title="Alejar">−</button>
+      <button type="button" class="et zoom__b" id="zoomMas" title="Acercar">+</button>
+      <button type="button" class="et zoom__b" id="zoomFit" title="Ajustar a la pantalla">Ajustar</button>
+      <button type="button" class="et zoom__b" id="zoomCerrar" title="Cerrar (Esc)">Cerrar ✕</button>
+    </span>
+  </div>
+  <div class="zoom__stage" id="zoomStage"><img id="zoomImg" alt=""></div>
+</div>
+
+<script src="data.js"></script>
+<script>
+(function(){
+"use strict";
+
+var mosaico = document.getElementById('mosaico');
+var fichaEl = document.getElementById('ficha');
+var indiceEl = document.getElementById('indice');
+var qEl = document.getElementById('q');
+var zoomEl = document.getElementById('zoom');
+var zoomImg = document.getElementById('zoomImg');
+var zoomStage = document.getElementById('zoomStage');
+var portada = document.querySelector('.port');
+var barraEl = document.getElementById('barra');
+var muestraImg = document.getElementById('muestraImg');
+var muestraImgs = [muestraImg, document.getElementById('muestraImgAlt')];
+
+/* Comparación sin acentos: nadie los escribe al buscar. La misma
+   normalización que build_catalog.py aplica al índice, para que los dos
+   lados hablen el mismo idioma. */
+function plegar(s){
+  return (s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                  .toLowerCase().replace(/\s+/g, ' ').trim();
+}
+
+/* Origen de la imagen: captura del original o recorte hecho para
+   presentarla. Lo declara build_catalog.py a partir de 02-qc/views.csv. */
+var ORIGEN = { 'derivada':'Recorte de presentación' };
+
+/* La ficha se direcciona por su identificador oficial (AMP-KGR-GG.SS). El
+   código de lote queda como alias para que los enlaces viejos no se rompan. */
+var porCodigo = {}, porGrupo = {};
+CATALOGO.forEach(function(p, i){ p._i = i; porCodigo[p.id] = p; porCodigo[p.code] = p; });
+GRUPOS.forEach(function(g){ porGrupo[g.id] = g; });
+
+function el(tag, cls, text){
+  var n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text != null) n.textContent = text;
+  return n;
+}
+function aparecer(img){
+  if (img.complete) img.classList.add('ok');
+  else img.addEventListener('load', function(){ img.classList.add('ok'); }, {once:true});
+}
+/* dimensiones intrínsecas: reservan el espacio y evitan el salto de layout */
+function medir(img, w, h){
+  if (w && h){ img.width = w; img.height = h; }
+  else { img.removeAttribute('width'); img.removeAttribute('height'); }
+}
+function conImagen(p){ return p.vistas.filter(function(v){ return v.src; }); }
+
+/* ------------------------------ portada ------------------------------ */
+function plural(n, uno, varios){ return n + ' ' + (n === 1 ? uno : varios); }
+
+(function(){
+  GRUPOS.forEach(function(g){
+    var b = el('button', 'indice__b et');
+    b.type = 'button';
+    b.dataset.grupo = g.id;
+    b.title = g.label;
+    b.appendChild(el('span', null, g.corto));
+    b.appendChild(el('span', 'indice__n', g.n));
+    b.addEventListener('click', function(){ irAGrupo(g.id); });
+    indiceEl.appendChild(b);
+  });
+})();
+
+/* ----------------------- muestra rotativa de portada ------------------
+   Principio D / D29: no es una lista aleatoria indiferenciada. Se arma en
+   cada visita una secuencia distinta que prioriza tipos documentales y grupos
+   todavía no representados; así rota por años, secciones y clases de pieza.
+   Usa únicamente la imagen y los metadatos que ya entrega data.js. A 3 s por
+   pieza, precarga y decodifica las dos vecinas antes de fundir en 160 ms. */
+var muestraPiezas = [];
+var muestraI = 0;
+var muestraTimer = null;
+var muestraPausada = false;
+var muestraInteractiva = false;
+var muestraCapa = 1;
+var muestraVersion = 0;
+var muestraPrecarga = [];
+
+function valorCampo(filas, nombre){
+  var f = (filas || []).filter(function(row){ return row[0] === nombre; })[0];
+  return f ? f[1] : '';
+}
+
+function mezclar(lista){
+  for (var i = lista.length - 1; i > 0; i--){
+    var j = Math.floor(Math.random() * (i + 1));
+    var x = lista[i]; lista[i] = lista[j]; lista[j] = x;
+  }
+  return lista;
+}
+
+function armarMuestra(){
+  var candidatos = mezclar(CATALOGO.filter(function(p){ return p.main; }).slice());
+  var tipos = {}, frecuenciaGrupo = {}, conteoTipo = {}, salida = [];
+  candidatos.forEach(function(p){
+    var tipo = valorCampo(p.doc, 'Tipo documental') || 'Documento';
+    conteoTipo[tipo] = (conteoTipo[tipo] || 0) + 1;
+  });
+
+  function agregar(indice){
+    var elegido = candidatos.splice(indice, 1)[0];
+    tipos[valorCampo(elegido.doc, 'Tipo documental') || 'Documento'] = true;
+    frecuenciaGrupo[elegido.grupo] = (frecuenciaGrupo[elegido.grupo] || 0) + 1;
+    salida.push(elegido);
+  }
+
+  /* Primero entra una pieza de cada grupo. Dentro del grupo gana, si existe,
+     un tipo todavía ausente; luego se completan doce con tipos faltantes y
+     el grupo menos repetido. En los datos actuales cubre los nueve grupos y
+     los nueve tipos documentales en cada carga. */
+  mezclar(GRUPOS.slice()).forEach(function(g){
+    var indices = [];
+    candidatos.forEach(function(p, i){ if (p.grupo === g.id) indices.push(i); });
+    if (!indices.length) return;
+    var nuevo = indices.filter(function(i){
+      return !tipos[valorCampo(candidatos[i].doc, 'Tipo documental') || 'Documento'];
+    });
+    var elegibles = nuevo.length ? nuevo : indices;
+    elegibles.sort(function(a, b){
+      var ta = valorCampo(candidatos[a].doc, 'Tipo documental') || 'Documento';
+      var tb = valorCampo(candidatos[b].doc, 'Tipo documental') || 'Documento';
+      return conteoTipo[ta] - conteoTipo[tb];
+    });
+    agregar(elegibles[0]);
+  });
+
+  while (candidatos.length && salida.length < 12){
+    var mejor = 0, puntaje = -Infinity;
+    candidatos.forEach(function(p, i){
+      var tipo = valorCampo(p.doc, 'Tipo documental') || 'Documento';
+      var s = (tipos[tipo] ? 0 : 20) - (frecuenciaGrupo[p.grupo] || 0);
+      if (s > puntaje){ puntaje = s; mejor = i; }
+    });
+    agregar(mejor);
+  }
+  return mezclar(salida);
+}
+
+function fuenteMuestra(p, rapida){
+  return 'img/' + ((rapida && p.main_t) ? p.main_t : p.main);
+}
+
+function precargarPieza(p, rapida){
+  var src = fuenteMuestra(p, rapida);
+  var guardada = muestraPrecarga.filter(function(img){ return img.dataset.src === src; })[0];
+  if (guardada) return guardada;
+  var img = new Image();
+  img.decoding = 'async';
+  img.dataset.src = src;
+  img.src = src;
+  return img;
+}
+
+function precargarVecinas(){
+  /* Sólo quedan retenidas anterior y siguiente: cubre los dos controles sin
+     mantener decodificadas las doce imágenes de acceso a la vez. */
+  muestraPrecarga = [-1, 1].map(function(delta){
+    var i = (muestraI + delta + muestraPiezas.length) % muestraPiezas.length;
+    return precargarPieza(muestraPiezas[i], true);
+  });
+}
+
+function pintarMuestra(){
+  var p = muestraPiezas[muestraI];
+  if (!p) return;
+  var version = ++muestraVersion;
+  var preparada = precargarPieza(p, true);
+
+  function mejorar(entrante){
+    var rapida = fuenteMuestra(p, true);
+    var final = fuenteMuestra(p, false);
+    if (final === rapida) return;
+    var alta = new Image();
+    alta.decoding = 'async';
+    alta.src = final;
+    function sustituir(){
+      if (version !== muestraVersion || !entrante.classList.contains('ok')) return;
+      /* `alta` ya está decodificada: cambiar al URL final no produce un hueco
+         negro ni muestra una imagen de otra pieza. */
+      entrante.src = final;
+      medir(entrante, p.main_w, p.main_h);
+    }
+    function decodificarAlta(){
+      if (alta.decode) alta.decode().catch(function(){}).then(sustituir);
+      else sustituir();
+    }
+    if (alta.complete && alta.naturalWidth) decodificarAlta();
+    else alta.addEventListener('load', decodificarAlta, {once:true});
+  }
+
+  function activar(){
+    if (version !== muestraVersion) return;
+    var saliente = muestraImgs[muestraCapa];
+    muestraCapa = 1 - muestraCapa;
+    var entrante = muestraImgs[muestraCapa];
+    entrante.classList.remove('ok');
+    entrante.src = fuenteMuestra(p, true);
+    entrante.alt = p.titulo + ' — abrir ficha';
+    medir(entrante, p.main_w, p.main_h);
+
+    document.getElementById('muestraLink').href = '#' + p.id;
+    document.getElementById('muestraTitulo').textContent = p.titulo;
+
+    /* La entrante ya está decodificada: ambas capas se cruzan y nunca queda
+       visible el fondo negro entre una pieza y la siguiente. */
+    void entrante.offsetWidth;
+    entrante.classList.add('ok');
+    saliente.classList.remove('ok');
+    saliente.alt = '';
+    precargarVecinas();
+    mejorar(entrante);
+    /* Los 3 s empiezan con la pieza ya lista, no mientras espera red/decodificación. */
+    programarMuestra();
+  }
+
+  function decodificar(){
+    if (preparada.decode) preparada.decode().catch(function(){}).then(activar);
+    else activar();
+  }
+  if (preparada.complete && preparada.naturalWidth) decodificar();
+  else preparada.addEventListener('load', decodificar, {once:true});
+}
+
+function programarMuestra(){
+  clearTimeout(muestraTimer);
+  if (muestraPausada || muestraInteractiva || document.hidden) return;
+  var p = muestraPiezas[muestraI];
+  var palabras = ((p && p.titulo) || '').trim().split(/\s+/).filter(Boolean).length;
+  /* Piso pedido de 3 s. A cada título se le reserva además 1,5 s para entrar
+     en la pieza y 300 ms por palabra (200 ppm), redondeados a cuartos de
+     segundo. Así no se mutila información para sostener ritmo. */
+  var demora = Math.max(3000, Math.ceil((1500 + palabras * 300) / 250) * 250);
+  muestraTimer = setTimeout(function(){ pasarMuestra(1); }, demora);
+}
+
+function pasarMuestra(delta){
+  if (!muestraPiezas.length) return;
+  muestraI = (muestraI + delta + muestraPiezas.length) % muestraPiezas.length;
+  pintarMuestra();
+}
+
+(function iniciarMuestra(){
+  muestraPiezas = armarMuestra();
+  if (!muestraPiezas.length){ document.getElementById('muestra').hidden = true; return; }
+  muestraI = Math.floor(Math.random() * muestraPiezas.length);
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    muestraPausada = true;
+    document.getElementById('muestraPausa').textContent = '▶';
+    document.getElementById('muestraPausa').title = 'Reanudar rotación';
+    document.getElementById('muestraPausa').setAttribute('aria-label', 'Reanudar rotación');
+  }
+  pintarMuestra();
+})();
+
+document.getElementById('muestraPrev').addEventListener('click', function(){ pasarMuestra(-1); });
+document.getElementById('muestraNext').addEventListener('click', function(){ pasarMuestra(1); });
+document.getElementById('muestraPausa').addEventListener('click', function(){
+  muestraPausada = !muestraPausada;
+  this.textContent = muestraPausada ? '▶' : 'Ⅱ';
+  this.title = muestraPausada ? 'Reanudar rotación' : 'Pausar rotación';
+  this.setAttribute('aria-label', muestraPausada ? 'Reanudar rotación' : 'Pausar rotación');
+  programarMuestra();
+});
+document.getElementById('muestra').addEventListener('pointerenter', function(){ muestraInteractiva = true; programarMuestra(); });
+document.getElementById('muestra').addEventListener('pointerleave', function(){ muestraInteractiva = false; programarMuestra(); });
+document.getElementById('muestra').addEventListener('focusin', function(){ muestraInteractiva = true; programarMuestra(); });
+document.getElementById('muestra').addEventListener('focusout', function(e){
+  if (!this.contains(e.relatedTarget)){ muestraInteractiva = false; programarMuestra(); }
+});
+document.addEventListener('visibilitychange', programarMuestra);
+
+/* La navegación no compite con la apertura: aparece con el primer gesto de
+   scroll. Sigue en el orden del DOM y el foco la revela antes de pintarlo, de
+   modo que Tab nunca encuentra controles invisibles. En una ficha permanece
+   visible porque allí ya es navegación de contexto, no anticipo del índice. */
+function actualizarBarra(){
+  var visible = !fichaEl.hidden || window.scrollY > 0 || barraEl.matches(':focus-within');
+  barraEl.classList.toggle('barra--visible', visible);
+}
+window.addEventListener('scroll', actualizarBarra, {passive:true});
+barraEl.addEventListener('focusin', actualizarBarra);
+barraEl.addEventListener('focusout', function(){ setTimeout(actualizarBarra, 0); });
+
+/* ------------------------------ mosaico ------------------------------ */
+var secciones = {};
+
+function marca(p){
+  var box = el('div', 'marca');
+  box.appendChild(el('span', 'marca__sig', p.id));
+  box.appendChild(el('span', 'et', p.aviso ? p.aviso.et : 'Sin imagen'));
+  return box;
+}
+
+function tarjeta(p){
+  var a = el('a', 'pieza');
+  a.href = '#' + p.id;
+  a.dataset.buscar = p.buscar;
+
+  var stand = el('div', 'pieza__stand');
+  if (p.main_t){
+    var img = el('img');
+    img.src = 'img/' + p.main_t;
+    img.alt = p.titulo;
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    medir(img, p.main_w, p.main_h);
+    aparecer(img);
+    stand.appendChild(img);
+  } else {
+    stand.appendChild(marca(p));
+  }
+  a.appendChild(stand);
+
+  var base = el('div', 'pieza__base');
+  base.appendChild(el('span', 'sig pieza__sig', p.id));
+  base.appendChild(el('span', 'pieza__t', p.titulo));
+  a.appendChild(base);
+  return a;
+}
+
+(function pintarMosaico(){
+  GRUPOS.forEach(function(g){
+    var sec = el('section', 'grupo');
+    sec.id = 'g-' + g.id;
+    sec.dataset.grupo = g.id;
+
+    var head = el('div', 'grupo__head');
+    head.appendChild(el('h2', 'grupo__t' + (g.anio ? '' : ' grupo__t--pal'), g.label));
+    head.appendChild(el('span', 'et grupo__n', g.id + ' · ' + g.n + (g.n === 1 ? ' pieza' : ' piezas')));
+    sec.appendChild(head);
+
+    var grid = el('div', 'piezas');
+    CATALOGO.forEach(function(p){ if (p.grupo === g.id) grid.appendChild(tarjeta(p)); });
+    sec.appendChild(grid);
+
+    secciones[g.id] = sec;
+    mosaico.appendChild(sec);
+  });
+  var v = el('p', 'vacio et', 'Sin coincidencias');
+  v.hidden = true;
+  v.id = 'vacio';
+  mosaico.appendChild(v);
+})();
+
+/* ------------------------------- buscar ------------------------------ */
+function filtrar(){
+  /* la consulta se pliega igual que el índice: sin acentos y en minúsculas,
+     así «catalogo» encuentra los dos catálogos y «musica» los del CLAEM */
+  var q = plegar(qEl.value);
+  var total = 0;
+  GRUPOS.forEach(function(g){
+    var sec = secciones[g.id], vis = 0;
+    sec.querySelectorAll('.pieza').forEach(function(c){
+      var ok = !q || c.dataset.buscar.indexOf(q) !== -1;
+      c.hidden = !ok;
+      if (ok) vis++;
+    });
+    sec.hidden = vis === 0;
+    sec.querySelector('.grupo__n').textContent = g.id + ' · ' + vis + (vis === 1 ? ' pieza' : ' piezas');
+    total += vis;
+  });
+  document.getElementById('vacio').hidden = total !== 0;
+}
+qEl.addEventListener('input', function(){
+  if (location.hash && location.hash !== '#'){ scrollMosaico = 0; location.hash = ''; }
+  filtrar();
+});
+
+/* la marca vuelve al catálogo completo y limpia el filtro */
+document.getElementById('marca').addEventListener('click', function(e){
+  e.preventDefault();
+  qEl.value = '';
+  filtrar();
+  scrollMosaico = 0;
+  if (location.hash && location.hash !== '#') location.hash = '';
+  else mostrarMosaico();
+  window.scrollTo(0, 0);
+});
+
+/* -------------------------------- ficha ------------------------------ */
+/* El rótulo de cuerpo es la única pieza de estructura de la ficha: caps
+   sobre una regla, con la cifra a la derecha sólo donde hay cantidad. */
+function bandaHead(titulo, cuenta){
+  var h = el('div', 'banda__h');
+  h.appendChild(el('h2', 'et banda__t', titulo));
+  if (cuenta) h.appendChild(el('span', 'et banda__n', cuenta));
+  return h;
+}
+
+function cuerpo(titulo, filas, extra){
+  /* D33: cada ficha es un registro autónomo. La uniformidad de Procedencia
+     entre las 130 piezas no autoriza a omitirla. */
+  var visibles = filas;
+  if (!visibles.length && !extra) return null;
+  var sec = el('section', 'cuerpo');
+  sec.appendChild(bandaHead(titulo, null));
+  var dl = el('dl', 'datos');
+  visibles.forEach(function(f){
+    var row = el('div', 'dato');
+    row.appendChild(el('dt', 'et dato__k', f[0]));
+    var dd = el('dd', 'dato__v' + (f[2] ? ' dato__v--' + f[2] : ''), f[1]);
+    row.appendChild(dd);
+    dl.appendChild(row);
+  });
+  if (extra) dl.appendChild(extra);
+  sec.appendChild(dl);
+  return sec;
+}
+
+function filaFuentes(p){
+  if (!p.fuentes || !p.fuentes.length) return null;
+  var row = el('div', 'dato');
+  row.appendChild(el('dt', 'et dato__k', 'Fuentes'));
+  var dd = el('dd', 'dato__v fuentes__breves');
+  var urls = Object.create(null);
+  p.fuentes.forEach(function(f){
+    if (!f.url || urls[f.url]) return;
+    urls[f.url] = true;
+    var cita = el('span', 'fuentes__breve');
+    var enlace = el('a', null, f.titulo);
+    enlace.href = f.url;
+    enlace.target = '_blank';
+    enlace.rel = 'noopener noreferrer';
+    cita.appendChild(enlace);
+    if (f.institucion) cita.appendChild(el('span', 'fuentes__inst', ' (' + f.institucion + ')'));
+    dd.appendChild(cita);
+  });
+  row.appendChild(dd);
+  return row;
+}
+
+function filaRelacionados(p){
+  if (!p.rel.length) return null;
+  var row = el('div', 'dato');
+  row.appendChild(el('dt', 'et dato__k', 'Otros documentos'));
+  var dd = el('dd', 'dato__v');
+  var lista = el('div', 'rel');
+  p.rel.forEach(function(r){
+    var a = el('a', null, r[1]);
+    a.href = '#' + r[0];
+    lista.appendChild(a);
+  });
+  dd.appendChild(lista);
+  row.appendChild(dd);
+  return row;
+}
+
+/* Las piezas sin captura no son todas lo mismo: una está catalogada y
+   pendiente de digitalizar, la otra es una entrada duplicada del listado
+   del lote. La ficha dice cuál es cuál y, si corresponde, adónde ir. */
+function aviso(p){
+  var box = el('div', 'aviso');
+  box.appendChild(el('span', 'aviso__et', p.aviso ? p.aviso.et : 'Sin imagen'));
+  if (p.aviso && p.aviso.nota) box.appendChild(el('p', 'aviso__p', p.aviso.nota));
+  if (p.aviso && p.aviso.ver && p.aviso.ver.length){
+    var lista = el('div', 'aviso__ver');
+    p.aviso.ver.forEach(function(r){
+      var a = el('a');
+      a.href = '#' + r[0];
+      a.appendChild(el('span', null, r[0]));
+      a.appendChild(el('span', null, r[1]));
+      lista.appendChild(a);
+    });
+    box.appendChild(lista);
+  }
+  return box;
+}
+
+function textoOrigen(v){ return ORIGEN[v && v.origen] || ''; }
+
+/* La ficha muestra una sola vista por vez, siempre en la misma caja. Cambiar
+   de vista cambia la imagen, nunca la altura: quién está mirada la dice la
+   tira, y el pie. `vistaActual` es la que abrirá el visor. */
+var vistaActual = null;
+
+function visor(p){
+  if (!p.main) return aviso(p);
+  var actual = p.vistas.filter(function(v){ return v.src === p.main; })[0];
+  vistaActual = actual || null;
+
+  var fig = el('figure', 'visor');
+  var caja = el('div', 'visor__caja');
+  var img = el('img', 'visor__img');
+  img.id = 'visorImg';
+  img.src = 'img/' + p.main;
+  img.alt = p.titulo + (actual ? ' — ' + actual.modo : '');
+  medir(img, p.main_w, p.main_h);
+  aparecer(img);
+  img.addEventListener('load', function(){ ajustarCaja(); }, {once:true});
+  img.title = 'Ampliar en el visor';
+  img.addEventListener('click', function(){ abrirVisor(p, vistaActual); });
+  caja.appendChild(img);
+  fig.appendChild(caja);
+
+  var pie = el('figcaption', 'visor__pie');
+  var t = el('span', 'et visor__f', actual ? actual.modo : p.id);
+  t.id = 'visorPie';
+  pie.appendChild(t);
+  var origen = textoOrigen(actual);
+  if (origen){
+    var o = el('span', 'et visor__o visor__o--der', origen);
+    o.id = 'visorOrigen';
+    pie.appendChild(o);
+  }
+  fig.appendChild(pie);
+  return fig;
+}
+
+/* Las vistas se rotulan por su modo de presentación (tapa, desplegado,
+   anexo…), no por el aparato con que se capturaron. Donde la fuente no lo
+   tipifica, el rótulo es posicional y queda atenuado. El recorte derivado
+   lo dice debajo del rótulo; la captura no necesita decirlo. */
+function tira(p){
+  if (!p.vistas.length) return null;
+  var wrap = el('section', 'tira');
+  var listas = conImagen(p).length;
+  wrap.appendChild(bandaHead('Vistas',
+    listas === p.vistas.length ? String(listas) : listas + ' de ' + p.vistas.length));
+
+  var items = el('div', 'tira__items');
+
+  p.vistas.forEach(function(v){
+    var item = el(v.src ? 'button' : 'div', 'tira__i' + (v.src ? '' : ' tira__i--off'));
+    if (v.src) item.type = 'button';
+    var stand = el('div', 'tira__stand');
+    if (v.thumb){
+      var t = el('img');
+      t.src = 'img/' + v.thumb;
+      t.alt = v.modo;
+      t.loading = 'lazy';
+      medir(t, v.w, v.h);
+      stand.appendChild(t);
+    }
+    item.appendChild(stand);
+    item.appendChild(el('span', 'tira__lab' + (v.neutro ? ' tira__lab--neutro' : ''), v.modo));
+    if (v.origen === 'derivada') item.appendChild(el('span', 'et tira__o', 'Recorte'));
+    /* el rótulo emergente se explica solo: nada de nombres de archivo */
+    item.title = v.modo
+      + (v.origen ? ' — ' + textoOrigen(v).toLowerCase() : '')
+      + (v.src ? '' : ' — pendiente de captura');
+
+    if (v.src){
+      item.addEventListener('click', function(){
+        var big = document.getElementById('visorImg');
+        if (!big) return;
+        vistaActual = v;
+        big.classList.remove('ok');
+        big.src = 'img/' + v.src;
+        big.alt = p.titulo + ' — ' + v.modo;
+        medir(big, v.w, v.h);
+        aparecer(big);
+        var pie = document.getElementById('visorPie');
+        if (pie) pie.textContent = v.modo;
+        var org = document.getElementById('visorOrigen');
+        var origen = textoOrigen(v);
+        if (org && origen) org.textContent = origen;
+        else if (org) org.remove();
+        else if (origen){
+          org = el('span', 'et visor__o visor__o--der', origen);
+          org.id = 'visorOrigen';
+          document.querySelector('.visor__pie').appendChild(org);
+        }
+        items.querySelectorAll('.tira__i').forEach(function(n){ n.removeAttribute('aria-current'); });
+        item.setAttribute('aria-current', 'true');
+      });
+      if (v.src === p.main) item.setAttribute('aria-current', 'true');
+    }
+    items.appendChild(item);
+  });
+  wrap.appendChild(items);
+  return wrap;
+}
+
+/* --------------------------- archivos --------------------------------
+   Las vistas ya son el inventario de acceso del catálogo. Usar esa misma lista
+   evita reconstruir apareos con originales o ajustadas que no se publican de
+   forma individual. El empaquetador sustituye sus nombres internos por los
+   nombres AMP-KGR estables antes de publicar. */
+function nombreAcceso(v){
+  var nombre = (v && v.src) || '';
+  try { nombre = decodeURIComponent(nombre); } catch (e) {}
+  return nombre.split('?')[0].split('/').pop();
+}
+
+function marcaPDF(){
+  var ns = 'http://www.w3.org/2000/svg';
+  var svg = document.createElementNS(ns, 'svg');
+  svg.setAttribute('class', 'arch__pdf');
+  svg.setAttribute('viewBox', '0 0 32 40');
+  svg.setAttribute('aria-hidden', 'true');
+  var path = document.createElementNS(ns, 'path');
+  path.setAttribute('d', 'M2 1h19l9 9v29H2z');
+  path.setAttribute('fill', '#e53935');
+  var fold = document.createElementNS(ns, 'path');
+  fold.setAttribute('d', 'M21 1v9h9z');
+  fold.setAttribute('fill', '#ff8a80');
+  var txt = document.createElementNS(ns, 'text');
+  txt.setAttribute('x', '16');txt.setAttribute('y', '29');
+  txt.setAttribute('text-anchor', 'middle');
+  txt.setAttribute('fill', '#ffffff');
+  txt.setAttribute('font-family', 'Arial, sans-serif');
+  txt.setAttribute('font-size', '8');txt.setAttribute('font-weight', '700');
+  txt.textContent = 'PDF';
+  svg.appendChild(path);svg.appendChild(fold);svg.appendChild(txt);
+  return svg;
+}
+
+function descargaVistaAcceso(v){
+  var a = el('a', 'arch__a');
+  var nombre = nombreAcceso(v);
+  a.href = 'img/' + v.src;a.download = nombre;
+  var txt = el('span', 'arch__txt');
+  txt.appendChild(el('span', 'et arch__nivel', 'JPEG de acceso'));
+  txt.appendChild(el('span', 'arch__nombre', nombre));
+  txt.appendChild(el('span', 'arch__m',
+    ['JPEG', v.w && v.h ? v.w + ' × ' + v.h : ''].filter(Boolean).join(' · ')));
+  a.appendChild(txt);
+  return a;
+}
+
+function vistasArchivos(p){
+  var vistas = conImagen(p);
+  if (!vistas.length) return null;
+  var sec = el('section', 'arch__vistas');
+  var head = el('div', 'arch__head');
+  head.appendChild(el('h3', 'arch__k', 'Imágenes de acceso'));
+  head.appendChild(el('p', 'arch__d', 'Un JPEG descargable por vista'));
+  head.appendChild(el('p', 'et arch__n', plural(vistas.length, 'vista', 'vistas')));
+  sec.appendChild(head);
+
+  var ul = el('ul', 'arch__l');
+  vistas.forEach(function(v, i){
+    var li = el('li', 'arch__fila');
+    var preview = el('span', 'arch__preview');
+    var thumb = v.thumb || v.src;
+    if (thumb){
+      var img = el('img');
+      img.src = 'img/' + thumb;img.alt = '';img.loading = 'lazy';img.decoding = 'async';
+      preview.appendChild(img);
+    }
+    li.appendChild(preview);
+
+    var cuerpo = el('div', 'arch__cuerpo');
+    var rotulo = el('div', 'arch__vista');
+    var numero = ('0' + (i + 1)).slice(-2);
+    rotulo.appendChild(el('span', 'et arch__vista-n', 'Vista ' + numero));
+    var modo = v.modo || '';
+    if (modo) rotulo.appendChild(el('span', 'arch__vista-m', modo));
+    cuerpo.appendChild(rotulo);
+    var opciones = el('div', 'arch__opciones');
+    opciones.appendChild(descargaVistaAcceso(v));
+    cuerpo.appendChild(opciones);
+    li.appendChild(cuerpo);
+    ul.appendChild(li);
+  });
+  sec.appendChild(ul);
+  return sec;
+}
+
+function pdfArchivos(d){
+  var sec = el('section', 'arch__pdfs');
+  var head = el('div', 'arch__head');
+  head.appendChild(el('h3', 'arch__k', 'PDF'));
+  head.appendChild(el('p', 'arch__d', d.d));
+  head.appendChild(el('p', 'et arch__n', d.n
+    ? plural(d.n, 'archivo', 'archivos') + ' · ' + d.peso
+    : (d.pend ? 'Pendiente' : 'No disponible')));
+  sec.appendChild(head);
+  if (!d.f.length){
+    sec.appendChild(el('p', 'et arch__pend',
+      d.pend ? 'Todavía no se armó el PDF' : 'No hay PDF disponible'));
+    return sec;
+  }
+  var ul = el('ul', 'arch__pdf-l');
+  d.f.forEach(function(f){
+    var li = el('li', 'arch__pdf-f');
+    var a = el('a', 'arch__pdf-a');
+    a.href = f[1];a.download = f[0];
+    a.appendChild(marcaPDF());
+    var txt = el('span', 'arch__txt');
+    txt.appendChild(el('span', 'arch__nombre', f[0]));
+    txt.appendChild(el('span', 'arch__m',
+      [f[2] || 'PDF', f[3], f[4]].filter(Boolean).join(' · ')));
+    a.appendChild(txt);
+    li.appendChild(a);ul.appendChild(li);
+  });
+  sec.appendChild(ul);
+  return sec;
+}
+
+function archivos(p){
+  var vistas = conImagen(p);
+  var pdfs = (p.desc || []).filter(function(d){ return d.k === 'PDF'; });
+  var total = vistas.length;
+  pdfs.forEach(function(d){ total += d.n; });
+
+  var sec = el('section', 'zona bajada');
+  sec.appendChild(bandaHead('Archivos de acceso', total
+    ? plural(total, 'archivo', 'archivos')
+    : 'Sin archivos'));
+
+  if (!total){
+    sec.appendChild(el('p', 'arch__vacio',
+      (p.aviso && p.aviso.arch) || 'Esta ficha todavía no tiene archivos para descargar.'));
+    return sec;
+  }
+  var caja = el('div', 'arch');
+  var bloqueVistas = vistasArchivos(p);
+  if (bloqueVistas) caja.appendChild(bloqueVistas);
+  pdfs.forEach(function(d){ caja.appendChild(pdfArchivos(d)); });
+  sec.appendChild(caja);
+  return sec;
+}
+
+/* ------------------------------- ruta --------------------------------
+   Principio B / D29: la ruta ocupa su propia línea y el título se pinta
+   inmediatamente debajo. Ninguno se comprime para hacer entrar al otro. */
+function pintarRuta(p){
+  var g = porGrupo[p.grupo] || {label: p.grupo_label, anio: false};
+
+  var nav = el('nav', 'fnav');
+  nav.setAttribute('aria-label', 'Navegación de la ficha');
+  var ruta = el('div', 'ruta');
+  var volver = el('button', 'ruta__v');
+  volver.type = 'button';
+  volver.setAttribute('aria-label', 'Volver al índice, ' + g.label);
+  volver.title = 'Volver al índice, ' + g.label;
+  var fl = el('span', 'ruta__fl', '←');
+  fl.setAttribute('aria-hidden', 'true');
+  volver.appendChild(fl);
+  /* Sobre el título va sólo una fecha documentada: nunca el nombre del grupo.
+     Si la pieza no tiene año, la flecha conserva el regreso y su rótulo ARIA. */
+  if (p.anio) volver.appendChild(el('span', 'ruta__anio', p.anio));
+  volver.addEventListener('click', function(){ irAGrupo(p.grupo); });
+  ruta.appendChild(volver);
+
+  nav.appendChild(ruta);
+
+  /* el rótulo emergente dice adónde lleva: un título suelto se leía como si
+     fuera de esta ficha y no de la siguiente */
+  var prev = CATALOGO[p._i - 1], next = CATALOGO[p._i + 1];
+  var grp = el('div', 'fnav__g');
+  [['← Anterior', prev, 'Documento anterior'],
+   ['Siguiente →', next, 'Documento siguiente']].forEach(function(par){
+    var b = el(par[1] ? 'a' : 'span', 'fnav__b et', par[0]);
+    if (par[1]){
+      b.href = '#' + par[1].id;
+      b.title = par[2] + ': ' + par[1].titulo + ' (' + par[1].id + ')';
+    } else {
+      b.setAttribute('aria-disabled', 'true');
+      b.title = par[2] + ': no hay';
+    }
+    grp.appendChild(b);
+  });
+  nav.appendChild(grp);
+  return nav;
+}
+
+/* La ficha baja por registros: la barra dice qué documento es → el
+   documento visto → los tres cuerpos que lo describen (Documento, Evento,
+   Archivos). Cada uno más técnico que el anterior. */
+function pintarFicha(p){
+  fichaEl.textContent = '';
+  fichaEl.appendChild(pintarRuta(p));
+  fichaEl.appendChild(el('h1', 'ficha__titulo', p.titulo));
+
+  var ver = el('div', 'ver');
+  ver.appendChild(visor(p));
+  var t = tira(p);
+  if (t) ver.appendChild(t);
+  fichaEl.appendChild(ver);
+
+  var leer = el('div', 'zona leer');
+  var doc = cuerpo('Documento', p.doc, null);
+  if (doc) leer.appendChild(doc);
+  var extrasEvento = document.createDocumentFragment();
+  var relacionados = filaRelacionados(p);
+  var fuentes = filaFuentes(p);
+  if (relacionados) extrasEvento.appendChild(relacionados);
+  if (fuentes) extrasEvento.appendChild(fuentes);
+  var ev = cuerpo('Evento', p.evento, extrasEvento);
+  if (ev) leer.appendChild(ev);
+  if (leer.children.length) fichaEl.appendChild(leer);
+
+  var arch = archivos(p);
+  if (arch) fichaEl.appendChild(arch);
+}
+
+/* ------------------------- la imagen entra entera --------------------
+   Regla de la ficha: al abrirla, el documento se ve completo sin
+   scrollear, en cualquier pantalla. Dos cosas la cumplen a la vez.
+
+   1. El alto disponible es todo lo que queda entre la barra y el borde de
+      abajo, menos el pie de la imagen. Nada más se interpone.
+   2. Ese alto es el TECHO, no la medida: la caja mide lo que necesita la
+      vista más alta de este documento a todo el ancho de su columna. Con
+      un alto fijo, un volante apaisado quedaba con media pantalla en
+      negro encima; con éste, la caja se ajusta al documento y sigue
+      siendo la misma para todas sus vistas, así cambiar de vista no
+      mueve el pie ni empuja lo que sigue.
+
+   Si no hay JS o la medición falla, el CSS trae un valor de reserva. */
+function ajustarCaja(p){
+  if (fichaEl.hidden) return;
+  var caja = fichaEl.querySelector('.visor__caja');
+  if (!caja) return;
+  if (!p) p = fichaActual;
+  var pie = fichaEl.querySelector('.visor__pie');
+  var vh = document.documentElement.clientHeight;
+  /* Coordenadas del viewport, no del documento: éste es el presupuesto real
+     de la primera pantalla. Se reserva el pie y un aire inferior auditable. */
+  var arriba = Math.max(0, caja.getBoundingClientRect().top);
+  var abajo = (pie ? pie.offsetHeight + 11 : 30) + 14;   // pie + aire
+  /* Principio B / D29: el título conserva su cuerpo. Si queda menos alto,
+     cede la caja de imagen, que mantiene `contain`; nunca se recorta. */
+  var techo = Math.max(1, Math.min(940, vh - arriba - abajo));
+
+  var ancho = caja.getBoundingClientRect().width;
+  var flaca = 0;                       // la proporción alto/ancho más alta
+  (p ? conImagen(p) : []).forEach(function(v){
+    if (v.w && v.h) flaca = Math.max(flaca, v.h / v.w);
+  });
+  var alto = flaca && ancho ? Math.min(techo, ancho * flaca) : techo;
+  fichaEl.style.setProperty('--caja', Math.round(Math.max(1, alto)) + 'px');
+  fichaEl.style.setProperty('--libre', Math.round(techo) + 'px');
+  fichaEl.dataset.cajaArriba = arriba.toFixed(2);
+  fichaEl.dataset.cajaReserva = abajo.toFixed(2);
+  fichaEl.dataset.cajaDisponible = techo.toFixed(2);
+}
+window.addEventListener('resize', function(){ ajustarCaja(); });
+if (window.visualViewport) window.visualViewport.addEventListener('resize', function(){ ajustarCaja(); });
+
+/* ---------------------------- enrutamiento --------------------------- */
+var scrollMosaico = 0;
+var saltoPendiente = null;
+var fichaActual = null;
+
+function mostrarMosaico(){
+  var veniaDeFicha = !fichaEl.hidden;
+  fichaEl.hidden = true;
+  fichaEl.textContent = '';
+  fichaActual = null;
+  mosaico.hidden = false;
+  portada.hidden = false;
+  actualizarBarra();
+  if (saltoPendiente){
+    var sec = secciones[saltoPendiente];
+    saltoPendiente = null;
+    if (sec){ sec.scrollIntoView({behavior:'smooth', block:'start'}); return; }
+  }
+  if (veniaDeFicha) window.scrollTo(0, scrollMosaico);
+}
+
+function mostrarFicha(p){
+  if (fichaEl.hidden) scrollMosaico = window.scrollY;
+  fichaActual = p;
+  pintarFicha(p);
+  mosaico.hidden = true;
+  portada.hidden = true;
+  fichaEl.hidden = false;
+  actualizarBarra();
+  /* el índice de años sigue en la barra: marcar el grupo abierto es lo
+     único que dice el amarillo */
+  marcarIndice(p.grupo);
+  window.scrollTo(0, 0);
+  ajustarCaja(p);
+  requestAnimationFrame(function(){ ajustarCaja(p); });
+}
+
+function irAGrupo(id){
+  saltoPendiente = id;
+  if (location.hash && location.hash !== '#') location.hash = '';
+  else mostrarMosaico();
+}
+
+var TITULO = document.title;
+var TITULO_SUJETO = 'Instituto Torcuato Di Tella · Centro de Experimentación Audiovisual · 1964–1970';
+function rutear(){
+  var p = porCodigo[decodeURIComponent(location.hash.replace(/^#/, '')).trim()];
+  if (p){ mostrarFicha(p); document.title = p.titulo + ' · ' + p.id + ' · ' + TITULO_SUJETO; }
+  else { mostrarMosaico(); document.title = TITULO; }
+}
+window.addEventListener('hashchange', rutear);
+
+/* -------------------------------- visor ------------------------------
+   La imagen de la ficha es vista de lectura, a tamaño estable. El detalle
+   se mira acá: pantalla completa, la pieza entera al abrir y el aumento a
+   pedido. El visor sólo escala y desplaza —nunca deforma ni recorta— y
+   guarda las vistas del documento para pasar de una a otra sin salir.
+
+   Escala 1 = la pieza ajustada a la pantalla. De ahí para arriba hasta 8×.
+   El traslado se acota a lo que la imagen desborda, así nunca se pierde de
+   vista. */
+var Z = {piezas: [], i: 0, k: 1, tx: 0, ty: 0, arrastra: false, x0: 0, y0: 0};
+var Z_MAX = 8;
+var zoomSig = document.getElementById('zoomSig');
+var zoomVista = document.getElementById('zoomVista');
+var zoomCuenta = document.getElementById('zoomCuenta');
+var zoomK = document.getElementById('zoomK');
+
+function zAplicar(){
+  zoomImg.style.transform =
+    'translate(' + Z.tx + 'px,' + Z.ty + 'px) scale(' + Z.k + ')';
+  zoomK.textContent = Math.round(Z.k * 100) + ' %';
+  zoomStage.classList.toggle('cerca', Z.k > 1);
+  document.getElementById('zoomMenos').toggleAttribute('aria-disabled', Z.k <= 1);
+  document.getElementById('zoomMas').toggleAttribute('aria-disabled', Z.k >= Z_MAX);
+}
+function zAcotar(){
+  var w = zoomImg.offsetWidth * Z.k, h = zoomImg.offsetHeight * Z.k;
+  var r = zoomStage.getBoundingClientRect();
+  var lx = Math.max(0, (w - r.width) / 2), ly = Math.max(0, (h - r.height) / 2);
+  Z.tx = Math.min(lx, Math.max(-lx, Z.tx));
+  Z.ty = Math.min(ly, Math.max(-ly, Z.ty));
+}
+function zEscalar(nk, cx, cy){
+  nk = Math.min(Z_MAX, Math.max(1, nk));
+  if (nk === Z.k) return;
+  var r = zoomStage.getBoundingClientRect();
+  var px = (cx == null ? r.width / 2 : cx - r.left) - r.width / 2;
+  var py = (cy == null ? r.height / 2 : cy - r.top) - r.height / 2;
+  var f = nk / Z.k;
+  Z.tx = px - (px - Z.tx) * f;
+  Z.ty = py - (py - Z.ty) * f;
+  Z.k = nk;
+  if (Z.k === 1){ Z.tx = 0; Z.ty = 0; }
+  zAcotar();
+  zAplicar();
+}
+function zSuave(fn){
+  zoomStage.classList.add('suave');
+  fn();
+  setTimeout(function(){ zoomStage.classList.remove('suave'); }, 220);
+}
+function zAjustar(){ zSuave(function(){ Z.k = 1; Z.tx = 0; Z.ty = 0; zAplicar(); }); }
+
+function zPintar(){
+  var v = Z.piezas[Z.i];
+  if (!v) return;
+  zoomImg.src = 'img/' + v.src;
+  zoomImg.alt = Z.titulo + ' — ' + v.modo;
+  zoomVista.textContent = v.modo;
+  zoomCuenta.textContent = Z.piezas.length > 1
+    ? (Z.i + 1) + ' de ' + Z.piezas.length : '';
+  var uno = Z.piezas.length < 2;
+  document.getElementById('zoomPrev').toggleAttribute('aria-disabled', uno);
+  document.getElementById('zoomNext').toggleAttribute('aria-disabled', uno);
+  Z.k = 1; Z.tx = 0; Z.ty = 0;
+  zAplicar();
+}
+function zPasar(d){
+  if (Z.piezas.length < 2) return;
+  Z.i = (Z.i + d + Z.piezas.length) % Z.piezas.length;
+  zPintar();
+}
+
+function abrirVisor(p, vista){
+  Z.piezas = conImagen(p);
+  Z.titulo = p.titulo;
+  Z.i = Math.max(0, Z.piezas.indexOf(vista));
+  zoomSig.textContent = p.id;
+  zoomEl.hidden = false;
+  zPintar();
+  zoomEl.focus({preventScroll:true});
+}
+function cerrarVisor(){
+  zoomEl.hidden = true;
+  zoomImg.removeAttribute('src');
+  zoomImg.style.transform = '';
+}
+
+document.getElementById('zoomCerrar').addEventListener('click', cerrarVisor);
+document.getElementById('zoomFit').addEventListener('click', zAjustar);
+document.getElementById('zoomMas').addEventListener('click', function(){
+  zSuave(function(){ zEscalar(Z.k * 1.6, null, null); });
+});
+document.getElementById('zoomMenos').addEventListener('click', function(){
+  zSuave(function(){ zEscalar(Z.k / 1.6, null, null); });
+});
+document.getElementById('zoomPrev').addEventListener('click', function(){ zPasar(-1); });
+document.getElementById('zoomNext').addEventListener('click', function(){ zPasar(1); });
+
+zoomStage.addEventListener('wheel', function(e){
+  e.preventDefault();
+  zEscalar(Z.k * Math.pow(1.0016, -e.deltaY), e.clientX, e.clientY);
+}, {passive: false});
+
+/* clic en el fondo = salir; clic en la imagen = acercar un paso */
+zoomStage.addEventListener('click', function(e){
+  if (e.target === zoomStage){ cerrarVisor(); return; }
+  if (e.detail > 1) return;                      // el doble clic lo maneja abajo
+  if (Z.k === 1) zSuave(function(){ zEscalar(2.2, e.clientX, e.clientY); });
+});
+
+zoomStage.addEventListener('dblclick', function(e){
+  zSuave(function(){
+    if (Z.k > 1) { Z.k = 1; Z.tx = 0; Z.ty = 0; zAplicar(); }
+    else zEscalar(2.6, e.clientX, e.clientY);
+  });
+});
+
+zoomStage.addEventListener('pointerdown', function(e){
+  if (Z.k <= 1) return;
+  Z.arrastra = true;
+  Z.x0 = e.clientX - Z.tx;
+  Z.y0 = e.clientY - Z.ty;
+  zoomStage.classList.add('arrastra');
+  zoomStage.setPointerCapture(e.pointerId);
+});
+zoomStage.addEventListener('pointermove', function(e){
+  if (!Z.arrastra) return;
+  Z.tx = e.clientX - Z.x0;
+  Z.ty = e.clientY - Z.y0;
+  zAcotar();
+  zAplicar();
+});
+['pointerup', 'pointercancel'].forEach(function(ev){
+  zoomStage.addEventListener(ev, function(){
+    Z.arrastra = false;
+    zoomStage.classList.remove('arrastra');
+  });
+});
+
+document.addEventListener('keydown', function(e){
+  if (!zoomEl.hidden){
+    if (e.key === 'Escape'){ cerrarVisor(); return; }
+    if (e.key === 'ArrowLeft'){ e.preventDefault(); zPasar(-1); return; }
+    if (e.key === 'ArrowRight'){ e.preventDefault(); zPasar(1); return; }
+    if (e.key === '+' || e.key === '='){ e.preventDefault(); zSuave(function(){ zEscalar(Z.k * 1.6); }); return; }
+    if (e.key === '-'){ e.preventDefault(); zSuave(function(){ zEscalar(Z.k / 1.6); }); return; }
+    if (e.key === '0'){ e.preventDefault(); zAjustar(); return; }
+    return;
+  }
+  if (e.key === 'Escape'){
+    if (!fichaEl.hidden) location.hash = '';
+    return;
+  }
+  if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+  if (fichaEl.hidden) return;
+  if (document.activeElement && /^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName)) return;
+  var cur = porCodigo[decodeURIComponent(location.hash.replace(/^#/, ''))];
+  if (!cur) return;
+  var destino = e.key === 'ArrowLeft' ? CATALOGO[cur._i - 1] : CATALOGO[cur._i + 1];
+  if (destino){ e.preventDefault(); location.hash = '#' + destino.id; }
+});
+
+/* ----------------------- grupo activo en el índice -------------------- */
+function marcarIndice(id){
+  indiceEl.querySelectorAll('.indice__b').forEach(function(b){
+    if (id && b.dataset.grupo === id) b.setAttribute('aria-current', 'true');
+    else b.removeAttribute('aria-current');
+  });
+}
+
+if ('IntersectionObserver' in window){
+  var visibles = {};
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ visibles[en.target.dataset.grupo] = en.isIntersecting; });
+    /* con el mosaico oculto todas las secciones dejan de intersecar: la
+       marca de la barra la sostiene la ficha, no el observador */
+    if (mosaico.hidden) return;
+    /* con dos secciones tocando la banda gana la de abajo: es a la que se
+       está entrando, y el amarillo dice «acá estás» */
+    var act = GRUPOS.filter(function(g){ return visibles[g.id]; });
+    marcarIndice(act.length ? act[act.length - 1].id : null);
+  }, { rootMargin: '-50px 0px -72% 0px' });
+  Object.keys(secciones).forEach(function(k){ io.observe(secciones[k]); });
+}
+
+rutear();
+})();
+</script>
+</body>
+</html>
