@@ -30,6 +30,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Instituto Torcuato Di Tella · Centro de Experimentación Audiovisual · 1964–1970</title>
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#000000">
 <meta name="description" content="Instituto Torcuato Di Tella, Centro de Experimentación Audiovisual, 1964–1970. Catálogo de acceso del Conjunto documental Kostzer–García Ramírez, Colección Mariano Pappalardo.">
 <style>
 /* ------------------------------------------------------------------ *
@@ -137,7 +142,12 @@ a{color:inherit;text-decoration:none}
   max-width:13ch;
 }
 .port__centro{display:block;margin-top:.42em;font-size:.34em;line-height:1.05;letter-spacing:-.018em;max-width:28ch}
-.port__anios{display:block;margin-top:.1em;font-size:.62em;letter-spacing:-.03em;color:var(--acento);font-variant-numeric:tabular-nums}
+/* El h1 lleva line-height .88: apretado a propósito para las tres líneas del
+   nombre. Los años son un bloque aparte y no deben heredarlo — con .88 el aire
+   contra «AUDIOVISUAL» queda en 8 px en el peor ancho, que es margen de
+   accidente y no de diseño. Con line-height propio el aire no depende de las
+   métricas de la fuente que le toque al visitante. */
+.port__anios{display:block;margin-top:.26em;line-height:1;font-size:.62em;letter-spacing:-.03em;color:var(--acento);font-variant-numeric:tabular-nums}
 .port__lede{
   margin:clamp(12px,1vw,16px) 0 0;
   max-width:52ch;
@@ -169,7 +179,6 @@ a{color:inherit;text-decoration:none}
 .pbuscar input::placeholder{color:var(--tinta-3)}
 .pbuscar input:hover{border-color:var(--tinta-3)}
 .pbuscar input:focus{outline:none;border-color:var(--acento);background:#141310}
-.pbuscar__pie{margin:9px 0 0;color:var(--tinta-3)}
 
 /* Principio D / D29: la apertura muestra el acervo, no lo usa como adorno.
    En escritorio ocupa casi toda la primera pantalla; los 28 px restantes
@@ -716,11 +725,14 @@ a{color:inherit;text-decoration:none}
 @media (min-width:901px){
   /* Los 28 px finales completan el viewport con la barra aún oculta; al primer
      desplazamiento ésta entra sin alterar la altura de la apertura. */
+  /* Altura MÍNIMA, no fija: con una pantalla baja el contenido crecía por
+     debajo del borde y se derramaba sobre el mosaico. Con min-height la
+     apertura sigue ocupando el viewport cuando hay lugar, y empuja cuando no. */
   .port{
-    height:calc(100vh - 28px);height:calc(100svh - 28px);
+    min-height:calc(100vh - 28px);min-height:calc(100svh - 28px);
     grid-template-rows:minmax(0,1fr)
   }
-  .port__intro,.muestra{height:100%;min-height:0}
+  .port__intro,.muestra{min-height:0}
 }
 @media (max-width:900px){
   .port{grid-template-columns:minmax(0,1fr)}
@@ -796,7 +808,6 @@ a{color:inherit;text-decoration:none}
         <input id="qPort" type="search" placeholder="título, año, sala, elenco…" autocomplete="off"
                aria-label="Buscar por título, identificador, año, tipo de documento, lugar o elenco">
       </label>
-      <p class="et pbuscar__pie" id="pbuscarPie"></p>
     </div>
   </div>
 
@@ -1260,15 +1271,6 @@ if (qPortEl){
       mosaico.scrollIntoView({behavior: 'smooth', block: 'start'});
     }
   });
-  /* El pie dice el tamaño del conjunto. Se cuentan sólo las vistas que tienen
-     captura: hay dos entradas sin imagen, y anunciarlas prometería algo que el
-     visitante no va a poder ver. */
-  var vistasTotal = 0;
-  CATALOGO.forEach(function(p){
-    (p.vistas || []).forEach(function(v){ if (v.src) vistasTotal++; });
-  });
-  document.getElementById('pbuscarPie').textContent =
-    CATALOGO.length + ' documentos · ' + vistasTotal + ' vistas';
 }
 
 /* la marca vuelve al catálogo completo y limpia el filtro */
