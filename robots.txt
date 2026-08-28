@@ -1,5 +1,0 @@
-# Mientras el sitio se está armando no queremos que Google lo indexe.
-# Para abrirlo a los buscadores: borrar la línea "Disallow: /" de abajo
-# (o borrar este archivo entero) y hacer commit.
-User-agent: *
-Disallow: /

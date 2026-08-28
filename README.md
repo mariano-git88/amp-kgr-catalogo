@@ -41,9 +41,7 @@ Copia el catálogo y los PDF, y reescribe las rutas `../2-pdf/` a `pdf/`
 
 ## Buscadores
 
-`robots.txt` hoy le pide a los buscadores que no indexen el sitio, para poder
-trabajarlo tranquilo. Cuando esté listo para ser público en Google, se borra
-ese archivo.
+El sitio es público e indexable: no hay `robots.txt` que los frene.
 
 ## Dónde se publica
 
