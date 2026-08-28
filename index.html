@@ -150,31 +150,26 @@ a{color:inherit;text-decoration:none}
 /* mismo nivel que la descripción: es información primaria, no letra chica */
 .port__credito{margin-top:.65em !important}
 .nowrap{white-space:nowrap}
-/* Descargas primarias: dos acciones explícitas, con el mismo peso visual. */
-.port__descargas{
-  margin-top:clamp(14px,1.6vw,22px);
-  display:flex;flex-wrap:wrap;gap:10px;
+/* Buscador de apertura: el campo se muestra entero, con el ancho de un campo
+   de verdad y el cuerpo de un título chico. El acento sigue reservado al foco,
+   como en todo el sitio; en reposo el borde es una regla más. */
+.port__buscar{margin-top:clamp(18px,2.2vw,30px);max-width:540px}
+.pbuscar{display:flex;flex-direction:column;gap:8px}
+.pbuscar__et{color:var(--tinta-2)}
+.pbuscar input{
+  width:100%;
+  font-family:var(--grot);
+  font-size:clamp(16px,1.45vw,21px);
+  padding:13px 16px;
+  color:var(--tinta);
+  background:#0c0b0a;
+  border:2px solid var(--linea-2);
+  transition:border-color .14s ease,background-color .14s ease;
 }
-.port__paquete{
-  padding:15px 20px 16px;
-  border:2px solid var(--acento);
-  background:var(--acento);
-  color:var(--negro);
-  flex:1 1 280px;
-  max-width:390px;
-  display:flex;flex-direction:column;gap:4px;
-  transition:background-color .14s ease,border-color .14s ease,transform .14s ease;
-}
-.port__paquete-t{font-size:clamp(17px,1.35vw,21px);font-weight:700;letter-spacing:-.018em}
-.port__paquete-d{color:var(--negro);opacity:.72;font-weight:700}
-.port__paquete:hover{background:#ffe45a;border-color:#ffe45a;transform:translateY(-1px)}
-.port__paquete--pendiente{
-  background:transparent;color:var(--acento);opacity:.62;cursor:default;
-}
-.port__paquete--pendiente .port__paquete-d{color:var(--acento)}
-.port__paquete--pendiente:hover{
-  background:transparent;border-color:var(--acento);transform:none;
-}
+.pbuscar input::placeholder{color:var(--tinta-3)}
+.pbuscar input:hover{border-color:var(--tinta-3)}
+.pbuscar input:focus{outline:none;border-color:var(--acento);background:#141310}
+.pbuscar__pie{margin:9px 0 0;color:var(--tinta-3)}
 
 /* Principio D / D29: la apertura muestra el acervo, no lo usa como adorno.
    En escritorio ocupa casi toda la primera pantalla; los 28 px restantes
@@ -278,20 +273,27 @@ a{color:inherit;text-decoration:none}
 .indice__n{color:var(--tinta-3)}
 .indice__b[aria-current="true"]{background:var(--acento);color:var(--negro)}
 .indice__b[aria-current="true"] .indice__n{color:var(--negro);opacity:.6}
-.buscar{flex:none;display:flex;gap:8px;align-items:center;border-bottom:1px solid var(--linea-2)}
-.buscar:focus-within{border-bottom-color:var(--acento)}
+.buscar{
+  flex:none;display:flex;gap:10px;align-items:center;
+  padding:0 12px;
+  border:1px solid var(--linea-2);
+  background:#0c0b0a;
+  transition:border-color .12s ease,background-color .12s ease;
+}
+.buscar:hover{border-color:var(--tinta-3)}
+.buscar:focus-within{border-color:var(--acento);background:#141310}
 .buscar input{
-  font-family:var(--mono);
+  /* la grotesca, no la monoespaciada: esto se lee, no es una signatura */
+  font-family:var(--grot);
   font-size:var(--t2);
-  width:clamp(88px,14vw,170px);
-  padding:5px 0;
+  width:clamp(150px,17vw,245px);
+  padding:9px 0;
   border:0;
   background:none;
   color:var(--tinta);
 }
 .buscar input::placeholder{color:var(--tinta-3)}
 .buscar input:focus{outline:none}
-.buscar:hover{border-bottom-color:var(--acento)}
 
 /* ============================== MOSAICO ============================ */
 .mosaico{padding:0 var(--pad) clamp(56px,9vw,128px)}
@@ -755,6 +757,7 @@ a{color:inherit;text-decoration:none}
   .grupo__t--pal,.port__t{max-width:100%}
   .fnav__b{padding:5px 6px}
   .zoom__bar{padding:9px var(--pad)}
+  .buscar input{width:clamp(120px,46vw,240px)}
 }
 @media (prefers-reduced-motion:reduce){
   *{transition-duration:.001ms !important}
@@ -785,13 +788,15 @@ a{color:inherit;text-decoration:none}
       <p class="port__credito">Conjunto documental Kostzer–García Ramírez
          · <span class="nowrap">Colección Mariano&nbsp;Pappalardo</span></p>
     </div>
-    <!-- Las dos copias se ofrecen donde se entra y enlazan directamente a ZIP
-         estables; sus nombres públicos no dependen de la fecha de armado. -->
-    <div class="port__descargas" id="portDescargas">
-      <a class="port__paquete" href="leeme.html">
-        <span class="port__paquete-t">Ver información de la entrega</span>
-        <span class="et port__paquete-d">Contenido y manifiesto de verificación</span>
-      </a>
+    <!-- La búsqueda ocupa la apertura: es la puerta al conjunto y no un
+         accesorio de la barra, que en esta pantalla todavía no se anuncia. -->
+    <div class="port__buscar">
+      <label class="pbuscar">
+        <span class="et pbuscar__et">Buscar en el conjunto</span>
+        <input id="qPort" type="search" placeholder="título, año, sala, elenco…" autocomplete="off"
+               aria-label="Buscar por título, identificador, año, tipo de documento, lugar o elenco">
+      </label>
+      <p class="et pbuscar__pie" id="pbuscarPie"></p>
     </div>
   </div>
 
@@ -822,8 +827,7 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="barra__fin">
     <label class="buscar">
-      <span class="et">Buscar</span>
-      <input id="q" type="search" placeholder="título, año, sala, elenco…" autocomplete="off"
+      <input id="q" type="search" placeholder="Buscar: título, año, sala, elenco…" autocomplete="off"
              aria-label="Buscar por título, identificador, año, tipo de documento, lugar o elenco">
     </label>
   </div>
@@ -1225,15 +1229,53 @@ function filtrar(){
   });
   document.getElementById('vacio').hidden = total !== 0;
 }
-qEl.addEventListener('input', function(){
+/* Dos campos, una sola consulta: el de la apertura y el de la barra escriben
+   sobre el mismo filtro y se copian el valor, para que nadie vuelva de la
+   barra al inicio y encuentre el campo vacío mientras el mosaico está filtrado. */
+var qPortEl = document.getElementById('qPort');
+
+function alBuscar(origen){
+  var otro = origen === qEl ? qPortEl : qEl;
+  if (otro) otro.value = origen.value;
   if (location.hash && location.hash !== '#'){ scrollMosaico = 0; location.hash = ''; }
   filtrar();
-});
+}
+
+qEl.addEventListener('input', function(){ alBuscar(qEl); });
+
+if (qPortEl){
+  /* Se baja al mosaico una sola vez —en el primer carácter—, no en cada tecla:
+     un scroll por pulsación haría saltar la página mientras se escribe. */
+  var bajoAlMosaico = false;
+  qPortEl.addEventListener('input', function(){
+    alBuscar(qPortEl);
+    if (qPortEl.value === ''){ bajoAlMosaico = false; return; }
+    if (bajoAlMosaico) return;
+    bajoAlMosaico = true;
+    mosaico.scrollIntoView({behavior: 'smooth', block: 'start'});
+  });
+  qPortEl.addEventListener('keydown', function(e){
+    if (e.key === 'Enter'){
+      e.preventDefault();
+      mosaico.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
+  });
+  /* El pie dice el tamaño del conjunto. Se cuentan sólo las vistas que tienen
+     captura: hay dos entradas sin imagen, y anunciarlas prometería algo que el
+     visitante no va a poder ver. */
+  var vistasTotal = 0;
+  CATALOGO.forEach(function(p){
+    (p.vistas || []).forEach(function(v){ if (v.src) vistasTotal++; });
+  });
+  document.getElementById('pbuscarPie').textContent =
+    CATALOGO.length + ' documentos · ' + vistasTotal + ' vistas';
+}
 
 /* la marca vuelve al catálogo completo y limpia el filtro */
 document.getElementById('marca').addEventListener('click', function(e){
   e.preventDefault();
   qEl.value = '';
+  if (qPortEl) qPortEl.value = '';
   filtrar();
   scrollMosaico = 0;
   if (location.hash && location.hash !== '#') location.hash = '';
